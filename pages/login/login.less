@@ -1,0 +1,147 @@
+/* pages/login/login.wxss */
+@import '/variable.less';
+
+.Headline {
+  color: @Gy1;
+  font-size: @HeadlineMedium;
+  font-weight: 600;
+  line-height: 36px;
+  font-family: "PingFang SC";
+  opacity: 1;
+  text-align: left;
+}
+
+.BodyLarge {
+  color: @Gy1;
+  font-size: @BodyLarge;
+  font-weight: 400;
+  font-family: "PingFang SC";
+  text-align: left;
+  line-height: 24px;
+}
+
+.welcome {
+  .Headline();
+  width: 231px;
+  height: 36px;
+  margin: 8px auto 16px 20px;
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  width: 100%;
+  margin-top: 8px;
+  margin-left: 16px;
+  border-bottom: 0.5px solid @Gray3;
+
+  .area-code {
+    display: inline-block;
+    width: 65px;
+    height: 56px;
+    opacity: 1;
+
+    .code {
+      .BodyLarge();
+      width: 65px;
+      height: 24px;
+      opacity: 1;
+      margin: 16px 0;
+      border-right: 0.5px solid @Gray3;
+
+      .t-icon {
+        display: inline-block;
+      }
+    }
+
+    .caret-down-small {
+      position: absolute;
+    }
+  }
+
+  .phone-input {
+    display: inline-block;
+    margin-left: 1px;
+
+    .t-input {
+      background-color: transparent;
+
+      &--border::after {
+        height: 0;
+      }
+    }
+  }
+}
+
+.login-tip {
+  width: 204px;
+  height: 20px;
+  opacity: 1;
+  color: @Gy3;
+  font-size: @BodySmall;
+  font-weight: 400;
+  font-family: "PingFang SC";
+  text-align: left;
+  line-height: 20px;
+  margin-left: 16px;
+  margin-top: 12px;
+}
+
+.user-agreement {
+  margin-top: 32px;
+  margin-left: 17px;
+  height: 20px;
+  width: 117px;
+  display: flex;
+
+  .agreement-check {
+    color: @Brand7-Normal;
+  }
+
+  .agreement-text {
+    color: @Gy1;
+    font-size: @BodySmall;
+    font-weight: 400;
+    height: 100%;
+    margin-left: 5px;
+  }
+}
+
+.login-button {
+  margin: 16px;
+}
+
+.others {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 40px;
+  margin: 32px 16px auto 16px;
+  display: flex;
+  align-items: center;
+
+  &-text {
+    color: @Gy2;
+    font-size: @BodySmall;
+  }
+
+  &-login {
+    margin: 8px;
+
+    .t-button {
+      width: 111px;
+    }
+  }
+
+  &-icon {
+    margin: 8px;
+  }
+}
+
+.forget-password {
+  display: flex;
+  font-size: @BodySmall;
+  align-items: center;
+  margin-left: 16px;
+}

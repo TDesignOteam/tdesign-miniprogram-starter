@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/explore/index",
-    "pages/my/index"
+    "pages/my/index",
+    "pages/login/login",
+    "pages/loginCode/loginCode"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -30,6 +32,5 @@
       }
     ]
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

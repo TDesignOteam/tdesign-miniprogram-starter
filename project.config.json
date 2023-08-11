@@ -43,11 +43,12 @@
     "disableUseStrict": false,
     "useCompilerPlugins": [
       "less"
-    ]
+    ],
+    "condition": false
   },
   "compileType": "miniprogram",
   "libVersion": "2.19.4",
-  "appid": "wxcdfa13a58381f0fc",
+  "appid": "wxbf1cfa4c70711c63",
   "projectname": "miniprogram-starter",
   "condition": {},
   "editorSetting": {
