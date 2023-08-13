@@ -1,16 +1,13 @@
 {
   "name": "miniprogram-starter",
   "version": "0.0.2",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "keywords": ["wechat", "miniprogram", "starter"],
   "author": "leejim",
   "license": "MIT",
   "description": "a start-kit for wechat miniprogram powerby TDesign miniprogram",
   "dependencies": {
-    "tdesign-miniprogram": "^0.12.1"
+    "tdesign-miniprogram": "^1.1.15"
   },
   "devDependencies": {}
 }

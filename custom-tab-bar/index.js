@@ -7,9 +7,9 @@ Component({
       value: 'index',
       label: '首页',
     },{
-      icon: 'control-platform',
-      value: 'explore',
-      label: '发现',
+      icon: 'chat',
+      value: 'notice',
+      label: '消息',
     }, {
       icon: 'user',
       value: 'my',

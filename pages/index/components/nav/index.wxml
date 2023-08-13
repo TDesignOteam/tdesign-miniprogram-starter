@@ -1,0 +1,8 @@
+<view class="home-navbar">
+  <t-navbar t-class="custom-nav-bar">
+    <view slot="left" class="home-navbar__left">
+      <t-button icon="view-list" size="large" variant="text" shape="square" />
+      <t-search shape="round" placeholder="请搜索你想要的内容" />
+    </view>
+  </t-navbar>
+</view>

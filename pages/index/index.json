@@ -1,4 +1,9 @@
 {
-  "navigationBarTitleText": "首页",
-  "usingComponents": {}
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "t-tabs": "tdesign-miniprogram/tabs/tabs",
+    "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
+    "nav": "./components/nav",
+    "card": "./components/card"
+  }
 }

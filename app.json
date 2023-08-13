@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/explore/index",
+    "pages/notice/index",
     "pages/my/index"
   ],
   "window": {
@@ -12,17 +12,14 @@
   },
   "tabBar": {
     "custom": true,
-    "color": "#000000",
-    "selectedColor": "#000000",
-    "backgroundColor": "#000000",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页"
       },
       {
-        "pagePath": "pages/explore/index",
-        "text": "发现"
+        "pagePath": "pages/notice/index",
+        "text": "消息"
       },
       {
         "pagePath": "pages/my/index",
@@ -30,6 +27,5 @@
       }
     ]
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

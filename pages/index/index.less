@@ -1,19 +1,22 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #aaa;
-}
+@import '/variable.less';
 
-.userinfo-avatar {
-  overflow: hidden;
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
+.home {
 
-.usermotto {
-  margin-top: 200px;
+  &-content {
+    height: calc(100% - @nav-bar-height);
+    overflow: auto;
+  }
+
+  .t-tabs {
+    --td-tab-font-size: @font-size-small;
+    width: 100%;
+  }
+
+  &__card-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 24rpx;
+    background-color: @bg-color;
+  }
 }
