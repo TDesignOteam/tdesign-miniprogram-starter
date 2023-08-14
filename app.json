@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/dataCenter/index",
     "pages/index/index",
     "pages/explore/index",
     "pages/my/index"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -27,6 +29,10 @@
       {
         "pagePath": "pages/my/index",
         "text": "我的"
+      },
+      {
+        "pagePath": "pages/dataCenter/index",
+        "text": "数据中心"
       }
     ]
   },

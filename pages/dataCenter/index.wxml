@@ -1,0 +1,32 @@
+<!--pages/dataCenter.wxml-->
+<view class="page">
+  <view class="first">
+    <view class="total-situation">整体情况</view>
+    <view class="accumulated-value">截止12:00累计数值</view>
+    <view class="small-card1">
+      <view class="read-num">浏览量</view>
+      <view class="big-num">202W</view>
+    </view>
+    
+    
+  </view>
+  <view class="second">
+    <view class="interaction-situation">互动情况</view>
+    <view class="small-card2">
+      <view class="read-num">浏览量</view>
+      <view class="small-num">919</view>
+      <view class="read-num" style="margin-left: 100rpx; margin-bottom: 200rpx;">次</view>
+    </view>
+    
+
+  </view>
+  <view class="forth">
+    <view class="complete-rate">完播率</view>
+  </view>
+  <view class="third">
+    <view class="complete-rate">按区域统计</view>
+  </view>
+</view>
+
+
+
