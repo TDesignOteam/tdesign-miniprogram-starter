@@ -11,14 +11,9 @@ const tags = [{
   }
 ]
 
-const cradInfo = [{
-  tags,
-  desc: '少年,星空与梦想',
-  url: '/static/home/card0.png'
-}]
-
 Page({
   data: {
+    swiperList: new Array(6).fill('/static/home/swiper0.png'),
     cardInfo: [{
         tags,
         desc: '少年,星空与梦想',
@@ -46,4 +41,7 @@ Page({
       }
     ],
   },
+  methods: {
+
+  }
 })

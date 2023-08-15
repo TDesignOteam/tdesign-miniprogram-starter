@@ -1,5 +1,7 @@
 Component({
-
+  options: {
+    styleIsolation: 'shared'
+  },
   properties: {
 
   },
