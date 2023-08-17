@@ -1,0 +1,64 @@
+/* pages/release/index.wxss */
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+.release-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+.release-container .box {
+  width: 100%;
+}
+.release-container .upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 224rpx;
+}
+.release-container .upload-class {
+  flex: 1;
+  padding-left: 16rpx;
+}
+.release-container .desc {
+  height: 264rpx;
+  display: flex;
+  padding: 32rpx;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.release-container .desc .desc-class {
+  width: 492rpx;
+  height: 100%;
+  padding: 0;
+}
+.release-container .taggroup .cell-title-class {
+  width: 162rpx;
+}
+.release-container .taggroup .tag-class {
+  margin-left: 24rpx;
+}
+.release-container .btngroup {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 32rpx;
+  position: fixed;
+  bottom: 64rpx;
+}
+.release-container .btngroup .btn-class {
+  width: 327rpx;
+  margin: 0;
+}
