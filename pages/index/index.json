@@ -5,6 +5,7 @@
     "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
     "t-swiper": "tdesign-miniprogram/swiper/swiper",
     "t-swiper-nav": "tdesign-miniprogram/swiper-nav/swiper-nav",
+    "t-pull-down-refresh": "tdesign-miniprogram/pull-down-refresh/pull-down-refresh",
     "nav": "./components/nav",
     "card": "./components/card"
   }

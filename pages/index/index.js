@@ -1,47 +1,40 @@
-// 获取应用实例
-const app = getApp()
+import {
+  getHomeCards,
+  getHomeSwipers
+} from '../../api/home'
 
-const tags = [{
-    text: 'AI绘画',
-    theme: 'primary'
-  },
-  {
-    text: '版权素材',
-    theme: 'success'
-  }
-]
+// 获取应用实例
+// const app = getApp()
 
 Page({
   data: {
-    swiperList: new Array(6).fill('/static/home/swiper0.png'),
-    cardInfo: [{
-        tags,
-        desc: '少年,星空与梦想',
-        url: '/static/home/card0.png'
-      },
-      {
-        tags,
-        desc: '仰望星空的少女',
-        url: '/static/home/card1.png'
-      },
-      {
-        tags,
-        desc: '仰望星空的少年',
-        url: '/static/home/card3.png'
-      },
-      {
-        tags,
-        desc: '少年,星空与梦想',
-        url: '/static/home/card2.png'
-      },
-      {
-        tags,
-        desc: '多彩的天空',
-        url: '/static/home/card4.png'
-      }
-    ],
+    enable: false,
+    swiperList: [],
+    cardInfo: []
   },
-  methods: {
-
+  // 生命周期
+  async onReady() {
+    const [cardRes, swiperRes] = await Promise.all([getHomeCards(), getHomeSwipers()])
+    this.setData({
+      cardInfo: cardRes.data,
+      swiperList: swiperRes.data
+    })
+  },
+  // methods
+  onRefresh() {
+    this.refresh()
+  },
+  async refresh() {
+    this.setData({
+      enable: true
+    });
+    const [cardRes, swiperRes] = await Promise.all([getHomeCards(), getHomeSwipers()])
+    setTimeout(() => {
+      this.setData({
+        enable: false,
+        cardInfo: cardRes.data,
+        swiperList: swiperRes.data
+      });
+    }, 1500);
   }
 })
