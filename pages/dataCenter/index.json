@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "数据中心",
-  "usingComponents": {}
+  "usingComponents": {
+    "t-progress": "tdesign-miniprogram/progress/progress"
+  }
 }

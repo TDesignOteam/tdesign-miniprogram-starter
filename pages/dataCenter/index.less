@@ -1,6 +1,8 @@
 .page {
   background-color: rgba(243, 243, 243, 1);
 }
+@margin-left-size:32rpx;
+@margin-top-size:32rpx;
 
 .first {
   position: relative; /* 添加相对定位 */
@@ -11,8 +13,8 @@
 }
 .second{
   position: relative; /* 添加相对定位 */
-  margin-top: 32rpx;
-  margin-left: 32rpx;
+  margin-top: @margin-top-size;
+  margin-left: @margin-left-size;
   margin-right: 32rpx;
   width: auto;    
   height: 228rpx;
@@ -21,9 +23,20 @@
   opacity: 1;
   background: #ffffff;
 }
+
 .third{
-  margin-top: 32rpx;
-  margin-left: 32rpx;
+  margin-top: @margin-top-size;
+  margin-left: @margin-left-size;
+  margin-right: 32rpx;
+
+  width: auto;  
+  height: 476rpx;
+  border-radius: 9px;
+  background: #ffffff;
+}
+.forth{
+  margin-top: @margin-top-size;
+  margin-left: @margin-left-size;
   margin-right: 32rpx;
   width: auto;  
 
@@ -32,22 +45,11 @@
   opacity: 1;
   background: #ffffff;
 }
-.forth{
-  margin-top: 32rpx;
-  margin-left: 32rpx;
-  margin-right: 32rpx;
-  width: auto;  
-
-  height: 476rpx;
-  border-radius: 9px;
-  opacity: 1;
-  background: #ffffff;
-}
 .total-situation {
   position: absolute; /* 添加绝对定位 */
   top: 24rpx;
   right: 268rpx;
-  left: 32rpx; /* 距离 first 左侧 16px */
+  left: @margin-left-size; /* 距离 first 左侧 32rpx */
   transform: translateY(-50%); /* 垂直居中对齐 */
   width: 450rpx;
   height: 48rpx;
@@ -79,8 +81,8 @@
 }
 .interaction-situation {
   position: absolute; /* 添加绝对定位 */
-  top: 32rpx;
-  left: 32rpx;
+  top: @margin-top-size;
+  left: @margin-left-size;
   width: 56px;
   height: 22px;
   opacity: 1;
@@ -91,26 +93,73 @@
   text-align: left;
   line-height: 22px;
  }
+ .per-hour{
+  background-color: blue;
+  width: 80rpx;
+  color: #000000e6;
+  font-size: 30rpx;
+  font-family: "PingFang SC";
+  text-align: left;
+ }
+.progress{
+  margin-left: @margin-left-size;
+  margin-right: @margin-left-size;
+  background-color: gray;
+  width: auto;
+  display: flex;
+}
 
-.small-card1{
-  position: absolute; /* 添加绝对定位 */
-  top: 104rpx;
-  left: 32rpx;
-  width: 206rpx;
+ .total-situation-container {
+  display: flex;
+  align-items: center;
+  width: 684rpx;
   height: 100rpx;
   opacity: 1;
   background: rgb(255, 255, 255);
 }
-.small-card2{
-  position: relative;
-  top: 100rpx;
-  margin-left: 32rpx;
-  width: 65.75px;
+.interaction-situation-container{
+  justify-content: space-between;
+  display: flex;
+  align-items: flex-start; /* 垂直顶部对齐 */
+  width: auto;
   height: 48px;
   opacity: 1;
   background-color: rgb(255, 255, 255);
 }
-.read-num {
+.progress-container{
+  margin-top: 0rpx;
+  margin-left: 16rpx;
+  margin-right: 32rpx;
+  width: auto;
+  height: auto;
+  flex: 1;
+}
+.hour-container{
+  background-color: yellow;
+  width: 80rpx;
+}
+.num-container {
+  display: flex;
+  align-items: center;
+}
+.big-item {
+  margin-left: @margin-left-size;
+  margin-top: 200rpx;
+  justify-content: flex-start;  /* 将 item 元素靠左对齐 */
+  flex-direction: column;
+  display: flex;
+  flex-grow: 1; /* 允许 item 拉伸填充剩余空间 */
+}
+.small-item {
+  display: flex;
+
+  margin-top: 100rpx;
+  margin-left: @margin-left-size;
+  justify-content: flex-start;  /* 将 item 元素靠左对齐 */
+  flex-direction: column;
+  flex-grow: 1; /* 允许 item 拉伸填充剩余空间 */
+}
+.num-name {
   width: auto;
   height: 40rpx;
   opacity: 1;
@@ -122,12 +171,11 @@
   line-height: 20px;
  }
  .complete-rate{
-    position: relative;
-    top: 32rpx;
-    margin-left: 32rpx;
+    padding-top: 32rpx;
+    margin-left: @margin-left-size;
     width: auto;
-    height: 200rpx;
-    opacity: 1;
+    height: 44rpx;
+
     color: rgba(0, 0, 0, 0.9);
     font-size: 14px;
     font-weight: 600;
@@ -139,7 +187,7 @@
     width: 62px;
     height: 32px;
     opacity: 1;
-    color: rgba(0, 0, 0, 0.9);
+    color: #000000e6;
     font-size: 24px;
     font-weight: 600;
     font-family: "PingFang SC";
@@ -147,7 +195,7 @@
     line-height: 32px;
  }
  .small-num{
-    width: 33px;
+    width: auto;
     height: 28px;
     opacity: 1;
     color: rgba(0, 0, 0, 0.9);
