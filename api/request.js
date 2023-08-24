@@ -12,7 +12,7 @@ function request(url, method = "GET", data = {}) {
   if (tokenString) {
     header.Authorization = `Bearer ${tokenString}`;
   }
-  return new Promise(function (resolve, reject) {
+  return new Promise((resolve, reject) => {
     wx.request({
       url: baseUrl + url,
       method,
