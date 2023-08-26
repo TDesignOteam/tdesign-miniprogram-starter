@@ -1,8 +1,8 @@
 {
   "pages": [
- 
-    "pages/setup/index",
     "pages/dataCenter/index",
+    "pages/setup/index",
+
     "pages/index/index",
     "pages/explore/index",
     "pages/my/index"
