@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/explore/index",
-    "pages/my/index"
+    "pages/my/index",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -30,6 +31,5 @@
       }
     ]
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
