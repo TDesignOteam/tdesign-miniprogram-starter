@@ -1,10 +1,11 @@
 {
   "pages": [
+ 
+    "pages/setup/index",
     "pages/dataCenter/index",
     "pages/index/index",
     "pages/explore/index",
     "pages/my/index"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -38,5 +39,4 @@
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
-  
 }

@@ -9,7 +9,6 @@
       </view>
     </view>
   </view>
-
   <view class="second">
     <view class="interaction-situation">互动情况</view>
     <view class="interaction-situation-container">
@@ -22,7 +21,6 @@
       </view>
     </view>
   </view>
-
   <view class="third">
     <view class="complete-rate">完播率</view>
 
@@ -35,7 +33,6 @@
       </view>
     </view>
   </view>
-
   <view class="forth">
     <view class="complete-rate">按区域统计</view>
 

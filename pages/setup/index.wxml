@@ -1,0 +1,8 @@
+<!--pages/setup/index.wxml-->
+<view class="page" >
+  <view class="card" wx:for="{{menuData}}" wx:for-item="item" wx:key="index">
+    <view wx:for="{{item}}" wx:for-item="carditem"  wx:key="cardkey" >
+      <t-cell  title="{{carditem.title}}"  hover arrow left-icon="app" url="{{carditem.url}} " bordered="true" leftIcon="{{carditem.icon}}"/>
+    </view>
+  </view>
+</view>
