@@ -5,12 +5,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["wechat", "miniprogram", "starter"],
+  "keywords": [
+    "wechat",
+    "miniprogram",
+    "starter"
+  ],
   "author": "leejim",
   "license": "MIT",
   "description": "a start-kit for wechat miniprogram powerby TDesign miniprogram",
   "dependencies": {
-    "tdesign-miniprogram": "^0.12.1"
-  },
-  "devDependencies": {}
+    "tdesign-miniprogram": "^1.1.15"
+  }
 }
