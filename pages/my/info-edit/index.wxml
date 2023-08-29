@@ -1,0 +1,44 @@
+<view>
+  <t-input t-class="cell-title" label="用户名" bind:blur="saveUsername" value="{{personInfo.userName}}"
+    placeholder="请输入用户名">
+  </t-input>
+</view>
+
+<view>
+  <t-cell title="性别">
+    <t-radio-group defaultValue="{{personInfo.gender}}" bind:change="saveGender" borderless t-class="box" slot="note">
+      <t-radio block="{{false}}" label="男" value="0" />
+      <t-radio block="{{false}}" label="女" value="1" />
+      <t-radio block="{{false}}" label="保密" value="2" />
+    </t-radio-group>
+  </t-cell>
+</view>
+
+<t-cell title="生日" bind:click="showPicker" data-mode="birth" note="{{personInfo.birth || ''}}" arrow />
+<t-cell title="地址" bind:click="showPicker" data-mode="address" note="{{personInfo.address || ''}}" arrow />
+
+<view slot="note" class="brief">
+  <t-textarea label="个人简介" t-class-label="brief-label" t-class="external-class" placeholder="请输入" maxcharacter="50"
+    disableDefaultPadding="{{true}}" value="{{personInfo.brief}}" bind:blur="saveBrief" indicator />
+</view>
+<t-cell />
+
+<t-cell title="照片墙" bordered="{{false}}">
+  <view slot="note">
+    <t-upload slot="note" media-type="{{['video','image']}}" files="{{personInfo.photos}}" gridConfig="{{gridConfig}}"
+      bind:success="handleSuccess" bind:remove="handleRemove" bind:click="handleClick" />
+  </view>
+</t-cell>
+
+<view class="btn_wrap">
+  <t-button class="save__btn" bind:tap="saveInfo" theme="primary" size="medium" block>保存</t-button>
+</view>
+
+<t-date-time-picker mode="date" title="选择生日" visible="{{birthVisible}}" cancelBtn="取消" confirmBtn="确认"
+  defaultValue="{{date}}" format="YYYY-MM-DD" bindchange="onPickerChange" bindcancel="hidePicker" />
+
+<t-picker mode="address" title="选择地址" visible="{{addressVisible}}" value="{{personInfo.address}}" cancelBtn="取消"
+  confirmBtn="确认" bindpick="onColumnChange" bindchange="onPickerChange" bindcancel="onPickerCancel">
+  <t-picker-item options="{{provinces}}"></t-picker-item>
+  <t-picker-item options="{{cities}}"></t-picker-item>
+</t-picker>
