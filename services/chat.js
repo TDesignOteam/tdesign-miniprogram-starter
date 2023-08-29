@@ -1,4 +1,4 @@
-import { delay } from './delay'
+import delay from './delay'
 
 // 模拟聊天数据
 const mockData = [
@@ -53,8 +53,9 @@ function addNewMessage(userId, from, content) {
     const user = mockData.splice(index, 1)[0]
     mockData.unshift(user)
     let messageId = 0
-    for (const item of mockData)
+    mockData.forEach(item => {
       messageId += item.messages.length
+    })
     const message = { messageId, from, content, time: Date.now(), read: from === 0 }
     user.messages.push(message)
 
@@ -109,8 +110,9 @@ export function connectSocket() {
 /** 获取未读消息数量 */
 export function fetchUnreadNum() {
   let unreadNum = 0
-  for (const item of mockData)
+  mockData.forEach(item => {
     unreadNum += item.messages.filter(message => !message.read).length
+  })
   return delay().then(() => ({ code: 200, data: unreadNum }))
 }
 
@@ -121,11 +123,15 @@ export function fetchMessageList() {
 
 /** 将某个用户的所有消息标记为已读 */
 export function markMessagesRead(userId) {
-  for (const user of mockData) {
+  let index = 0
+  while (index < mockData.length) {
+    const user = mockData[index]
     if (user.userId === userId) {
-      for (const message of user.messages)
+      user.messages.forEach(message => {
         message.read = true
+      })
       break
     }
+    index += 1
   }
 }

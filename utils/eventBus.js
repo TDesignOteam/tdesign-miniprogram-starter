@@ -1,4 +1,4 @@
-export function createBus() {
+export default function createBus() {
   return {
     events: {},
     on(event, callback) {

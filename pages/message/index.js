@@ -1,8 +1,9 @@
 // pages/message/message.js
 import { fetchMessageList, markMessagesRead } from '../../services/chat'
+
 const app = getApp()
-const socket = app.globalData.socket    // 获取已连接的 socketTask
-let currentUser = null                  // 当前打开的聊天用户 { userId, eventChannel }
+const { socket } = app.globalData     // 获取已连接的 socketTask
+let currentUser = null                // 当前打开的聊天用户 { userId, eventChannel }
 
 Page({
   /** 页面的初始数据 */
@@ -65,10 +66,12 @@ Page({
 
   /** 通过 userId 获取 user 对象和下标 */
   getUserById(userId) {
-    for (const index in this.data.messageList) {
+    let index = 0
+    while (index < this.data.messageList.length) {
       const user = this.data.messageList[index]
       if (user.userId === userId)
         return { user, index }
+      index += 1
     }
     // TODO：处理 userId 在列表中不存在的情况（）
   },
@@ -76,15 +79,16 @@ Page({
   /** 计算未读消息数量 */
   computeUnreadNum() {
     let unreadNum = 0
-    for (const { messages } of this.data.messageList)
+    this.data.messageList.forEach(({ messages }) => {
       unreadNum += messages.filter(item => !item.read).length
+    })
     return unreadNum
   },
 
   /** 打开对话页 */
   toChat(event) {
     const { userId } = event.currentTarget.dataset
-    wx.navigateTo({ url: '/pages/chat/index?userId' + userId }).then(({ eventChannel }) => {
+    wx.navigateTo({ url: `/pages/chat/index?userId${userId}` }).then(({ eventChannel }) => {
       currentUser = { userId, eventChannel }
       const { user } = this.getUserById(userId)
       eventChannel.emit('update', user)
@@ -95,8 +99,9 @@ Page({
   /** 将用户的所有消息标记为已读 */
   setMessagesRead(userId) {
     const { user } = this.getUserById(userId)
-    for (const message of user.messages)
+    user.messages.forEach(message => {
       message.read = true
+    })
     this.setData({ messageList: this.data.messageList })
     app.setUnreadNum(this.computeUnreadNum())
     markMessagesRead(userId)

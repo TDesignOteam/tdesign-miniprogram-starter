@@ -1,5 +1,5 @@
 // app.js
-import { createBus } from './utils/eventBus'
+import createBus from './utils/eventBus'
 import { connectSocket, fetchUnreadNum } from './services/chat'
 
 App({

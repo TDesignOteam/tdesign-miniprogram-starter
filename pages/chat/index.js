@@ -1,6 +1,6 @@
 // pages/chat/index.js
 const app = getApp()
-const socket = app.globalData.socket    // 获取已连接的socketTask
+const { socket } = app.globalData     // 获取已连接的socketTask
 
 Page({
   /** 页面的初始数据 */
