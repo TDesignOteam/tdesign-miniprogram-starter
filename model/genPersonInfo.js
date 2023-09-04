@@ -1,4 +1,4 @@
-export function genPersonInfo() {
+export default function genPersonInfo() {
   return {
     userName: 'test',
     gender: '0',

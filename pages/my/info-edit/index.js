@@ -1,4 +1,4 @@
-import { fetchPersonInfo } from '../../../api/personInfo';
+import fetchPersonInfo from '../../../api/personInfo';
 
 const areaList = {
   provinces: {
@@ -63,7 +63,6 @@ Page({
       this.setData({
         personInfo,
       });
-      console.log
     });
   },
 
@@ -156,6 +155,6 @@ Page({
   },
 
   saveInfo() {
-    console.log(this.data.personInfo)
+    // console.log(this.data.personInfo)
   }
 })

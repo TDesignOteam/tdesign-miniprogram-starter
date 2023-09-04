@@ -1,14 +1,14 @@
-import { config } from '../config/index';
-import { genPersonInfo } from '../model/genPersonInfo';
+import config from '../config/index';
+import genPersonInfo from '../model/genPersonInfo';
+import delay from '../utils/delay';
 
 function mockFetchPerson() {
-  const { delay } = require('../utils/delay');
   return delay().then(() => ({
     ...genPersonInfo()
   }));
 }
 
-export function fetchPersonInfo() {
+export default function fetchPersonInfo() {
   if (config.useMock) {
     return mockFetchPerson();
   }
