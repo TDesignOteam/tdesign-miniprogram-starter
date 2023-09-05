@@ -38,6 +38,7 @@
     "useCompilerPlugins": [
       "less"
     ],
+    "condition": false,
     "ignoreUploadUnusedFiles": true
   },
   "compileType": "miniprogram",
@@ -51,5 +52,6 @@
     "ignore": [],
     "include": []
   },
-  "appid": "wxcdfa13a58381f0fc"
+  "appid": "wxcdfa13a58381f0fc",
+  "projectname": "tdesign-miniprogram-starter"
 }
