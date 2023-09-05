@@ -44,7 +44,11 @@
     "useCompilerPlugins": [
       "less"
     ],
-    "ignoreUploadUnusedFiles": true
+
+    "ignoreUploadUnusedFiles": true，
+
+    "condition": false
+
   },
   "compileType": "miniprogram",
   "libVersion": "2.19.4",

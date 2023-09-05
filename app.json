@@ -3,9 +3,11 @@
     "pages/dataCenter/index",
     "pages/setup/index",
 
-    "pages/index/index",
-    "pages/explore/index",
-    "pages/my/index"
+    "pages/home/index",
+    "pages/message/index",
+    "pages/my/index",
+    "pages/chat/index"
+
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -15,17 +17,14 @@
   },
   "tabBar": {
     "custom": true,
-    "color": "#000000",
-    "selectedColor": "#000000",
-    "backgroundColor": "#000000",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/home/index",
         "text": "首页"
       },
       {
-        "pagePath": "pages/explore/index",
-        "text": "发现"
+        "pagePath": "pages/message/index",
+        "text": "消息"
       },
       {
         "pagePath": "pages/my/index",
