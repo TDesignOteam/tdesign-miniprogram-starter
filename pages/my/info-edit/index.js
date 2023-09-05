@@ -34,14 +34,14 @@ Page({
       userName: '',
       gender: '0',
       birth: '',
-      address: '',
+      address: [],
       brief: '',
       photos: []
     },
     mode: '',
     birthVisible: false,
-    date: new Date('2021-9-9').getTime(),
 
+    addressText: '',
     addressVisible: false,
     provinces: getOptions(areaList.provinces),
     cities: [],
@@ -63,6 +63,9 @@ Page({
       this.setData({
         personInfo,
       });
+      this.setData({
+        addressText: areaList.provinces[this.data.personInfo.address[0]] + ' ' + areaList.cities[this.data.personInfo.address[1]]
+      });
     });
   },
 
@@ -77,6 +80,7 @@ Page({
     }
   },
 
+  // 更新第二栏的 city 列表 
   updateCities() {
     const { provinces } = this.data;
     const cities = this.getCities(provinces[0].value);
@@ -94,7 +98,8 @@ Page({
       [`${mode}Visible`]: true,
     });
     if (mode === "address") {
-      this.updateCities();
+      const cities = this.getCities(this.data.personInfo.address[0]);
+      this.setData({ cities });
     }
   },
 
@@ -115,7 +120,7 @@ Page({
     });
     if (mode === "address") {
       this.setData({
-        [`personInfo.${mode}`]: label.join(' '),
+        addressText: label.join(' '),
       });
     }
 

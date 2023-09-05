@@ -15,7 +15,7 @@
 </view>
 
 <t-cell title="生日" bind:click="showPicker" data-mode="birth" note="{{personInfo.birth || ''}}" arrow />
-<t-cell title="地址" bind:click="showPicker" data-mode="address" note="{{personInfo.address || ''}}" arrow />
+<t-cell title="地址" bind:click="showPicker" data-mode="address" note="{{addressText || ''}}" arrow />
 
 <view slot="note" class="brief">
   <t-textarea label="个人简介" t-class-label="brief-label" t-class="external-class" placeholder="请输入" maxcharacter="50"
@@ -35,7 +35,7 @@
 </view>
 
 <t-date-time-picker mode="date" title="选择生日" visible="{{birthVisible}}" cancelBtn="取消" confirmBtn="确认"
-  defaultValue="{{date}}" format="YYYY-MM-DD" bindchange="onPickerChange" bindcancel="hidePicker" />
+  defaultValue="{{personInfo.birth}}" format="YYYY-MM-DD" bindchange="onPickerChange" bindcancel="hidePicker" />
 
 <t-picker mode="address" title="选择地址" visible="{{addressVisible}}" value="{{personInfo.address}}" cancelBtn="取消"
   confirmBtn="确认" bindpick="onColumnChange" bindchange="onPickerChange" bindcancel="onPickerCancel">

@@ -3,7 +3,7 @@ export default function genPersonInfo() {
     userName: 'test',
     gender: '0',
     birth: '1994-9-27',
-    address: '广东省 深圳市',
+    address: ["440000", "440300"],
     brief: '',
     photos: [
       {
