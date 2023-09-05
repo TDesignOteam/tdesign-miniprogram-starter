@@ -56,7 +56,7 @@ Page({
   },
   release() {
     wx.reLaunch({
-      url: `/pages/index/index?release=success`,
+      url: `/pages/home/index?release=success`,
     });
   },
 });
