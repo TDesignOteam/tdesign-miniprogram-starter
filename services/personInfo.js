@@ -1,6 +1,6 @@
 import config from '../config/index';
 import genPersonInfo from '../model/genPersonInfo';
-import delay from '../utils/delay';
+import delay from './delay'
 
 function mockFetchPerson() {
   return delay().then(() => ({

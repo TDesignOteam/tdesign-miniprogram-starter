@@ -3,7 +3,7 @@
     "pages/home/index",
     "pages/message/index",
     "pages/my/index",
-    "pages/my/info-edit/index"
+    "pages/my/info-edit/index",
     "pages/chat/index"
   ],
   "window": {

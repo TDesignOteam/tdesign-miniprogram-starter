@@ -64,7 +64,7 @@ Page({
         personInfo,
       });
       this.setData({
-        addressText: areaList.provinces[this.data.personInfo.address[0]] + ' ' + areaList.cities[this.data.personInfo.address[1]]
+        addressText: `${areaList.provinces[this.data.personInfo.address[0]]} ${areaList.cities[this.data.personInfo.address[1]]}`
       });
     });
   },
