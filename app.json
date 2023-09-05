@@ -3,6 +3,7 @@
     "pages/home/index",
     "pages/message/index",
     "pages/my/index",
+    "pages/chat/index",
     "pages/release/index"
   ],
   "window": {
@@ -13,9 +14,6 @@
   },
   "tabBar": {
     "custom": true,
-    "color": "#000000",
-    "selectedColor": "#000000",
-    "backgroundColor": "#000000",
     "list": [
       {
         "pagePath": "pages/home/index",

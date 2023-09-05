@@ -1,0 +1,3 @@
+**/*.wxs
+node_modules
+miniprogram_npm
