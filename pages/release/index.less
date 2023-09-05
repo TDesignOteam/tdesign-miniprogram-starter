@@ -10,13 +10,14 @@
     width: 100%;
   }
   .upload {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 112rpx * @multi;
+    position: relative;
     &-class {
-      flex: 1;
-      padding-left: 16rpx;
+      width: 344rpx * @multi;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
   .desc {
