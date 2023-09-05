@@ -22,8 +22,6 @@
     <text class="user-motto">{{motto}}</text>
   </view>
 </view>
-<<<<<<< HEAD
-=======
 <view class="home-release">
   <t-button t-class="relese-button"
             theme="primary"
@@ -33,4 +31,3 @@
             bindtap="goRelease">发布</t-button>
 </view>
 <t-message id="t-message" />
->>>>>>> main
