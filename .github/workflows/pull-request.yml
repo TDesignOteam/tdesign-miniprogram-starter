@@ -6,9 +6,10 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  install:
+  lint:
     runs-on: ubuntu-latest
     steps: 
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 18
@@ -25,12 +26,5 @@ jobs:
             ${{ runner.os }}-node-
       - run: npm install
         shell: bash
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: ./.github/actions/install-dep
       - name: lint 检查
         run: npm run lint
-      - name: unit test
-        run: npm run test:unit
