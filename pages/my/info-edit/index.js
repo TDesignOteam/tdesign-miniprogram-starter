@@ -1,4 +1,4 @@
-import fetchPersonInfo from '../../../api/personInfo';
+import fetchPersonInfo from '../../../services/personInfo';
 
 const areaList = {
   provinces: {
