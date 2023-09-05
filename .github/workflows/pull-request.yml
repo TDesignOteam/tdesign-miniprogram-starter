@@ -7,6 +7,7 @@ on:
 
 jobs:
   install:
+    runs-on: ubuntu-latest
     steps: 
       - uses: actions/setup-node@v2
         with:
@@ -22,8 +23,8 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-    - run: npm install
-      shell: bash
+      - run: npm install
+        shell: bash
   lint:
     runs-on: ubuntu-latest
     steps:
