@@ -1,8 +1,7 @@
-import { request } from "../../api/request"
+import request from '../../api/request';
 
 // pages/login/login.js
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -14,77 +13,70 @@ Page({
     isPasswordLogin: false,
     passwordInfo: {
       account: '',
-      password: ''
-    }
+      password: '',
+    },
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-  },
+  onLoad(options) {},
 
-  /*自定义功能函数*/
+  /* 自定义功能函数 */
   changeSubmit() {
     if (this.data.isPasswordLogin) {
       if (this.data.passwordInfo.account !== '' && this.data.passwordInfo.password !== '' && this.data.isCheck) {
-        this.setData({ isSubmit: true })
+        this.setData({ isSubmit: true });
+      } else {
+        this.setData({ isSubmit: false });
       }
-      else {
-        this.setData({ isSubmit: false })
-      }
-    }
-    else {
-      if (this.data.isPhoneNumber && this.data.isCheck) {
-        this.setData({ isSubmit: true })
-      }
-      else {
-        this.setData({ isSubmit: false })
-      }
+    } else if (this.data.isPhoneNumber && this.data.isCheck) {
+      this.setData({ isSubmit: true });
+    } else {
+      this.setData({ isSubmit: false });
     }
   },
-  //手机号变更
+  // 手机号变更
   onPhoneInput(e) {
     const isPhoneNumber = /^[1][3,4,5,7,8,9][0-9]{9}$/.test(e.detail.value);
     this.setData({
       isPhoneNumber,
-      phoneNumber: e.detail.value
+      phoneNumber: e.detail.value,
     });
-    this.changeSubmit()
+    this.changeSubmit();
   },
-  //用户协议选择变更
+  // 用户协议选择变更
   onCheckChange() {
-    this.setData({ isCheck: !this.data.isCheck })
-    this.changeSubmit()
+    this.setData({ isCheck: !this.data.isCheck });
+    this.changeSubmit();
   },
   onAccountChange(e) {
-    this.setData({ passwordInfo: { ...this.data.passwordInfo, account: e.detail.value } })
-    this.changeSubmit()
+    this.setData({ passwordInfo: { ...this.data.passwordInfo, account: e.detail.value } });
+    this.changeSubmit();
   },
   onPasswordChange(e) {
-    this.setData({ passwordInfo: { ...this.data.passwordInfo, password: e.detail.value } })
-    this.changeSubmit()
+    this.setData({ passwordInfo: { ...this.data.passwordInfo, password: e.detail.value } });
+    this.changeSubmit();
   },
-  //切换登录方式
+  // 切换登录方式
   changeLogin() {
-    this.setData({ isPasswordLogin: !this.data.isPasswordLogin, isSubmit: false })
+    this.setData({ isPasswordLogin: !this.data.isPasswordLogin, isSubmit: false });
   },
   async login() {
     if (this.data.isPasswordLogin) {
-      const res = await request('/login/postPasswordLogin', 'post', { data: this.data.passwordInfo })
+      const res = await request('/login/postPasswordLogin', 'post', { data: this.data.passwordInfo });
       if (res.success) {
-        await wx.setStorageSync('access_token', res.data.token)
+        await wx.setStorageSync('access_token', res.data.token);
         wx.switchTab({
           url: `/pages/my/index`,
-        })
+        });
       }
-    }
-    else {
-      const res = await request('/login/getSendMessage', 'get')
+    } else {
+      const res = await request('/login/getSendMessage', 'get');
       if (res.success) {
         wx.navigateTo({
           url: `/pages/loginCode/loginCode?phoneNumber=${this.data.phoneNumber}`,
-        })
+        });
       }
     }
-  }
-})
+  },
+});

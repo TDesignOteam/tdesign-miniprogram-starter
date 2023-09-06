@@ -1,6 +1,6 @@
 import config from "../config";
 
-const baseUrl = config.baseUrl;
+const {baseUrl} = config;
 const delay = config.isMock ? 500 : 0
 function request(url, method = "GET", data = {}) {
   const header = {
@@ -42,4 +42,4 @@ function request(url, method = "GET", data = {}) {
 }
 
 // 导出请求和服务地址
-export { request }
+export default request 

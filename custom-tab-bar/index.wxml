@@ -1,5 +1,5 @@
-<t-tab-bar value="{{value}}" bind:change="handleChange">
-  <t-tab-bar-item wx:for="{{list}}" wx:key="index" icon="{{item.icon}}" value="{{item.value}}">
-    {{item.label}}
-  </t-tab-bar-item>
+<t-tab-bar value="{{ value }}" theme="tag" split="{{ false }}" bind:change="handleChange">
+  <t-tab-bar-item icon="home" value="home">首页</t-tab-bar-item>
+  <t-tab-bar-item icon="chat" value="message" badge-props="{{ { count: unreadNum, offset: [0, '-16rpx'] } }}">消息</t-tab-bar-item>
+  <t-tab-bar-item icon="user" value="my">我的</t-tab-bar-item>
 </t-tab-bar>
