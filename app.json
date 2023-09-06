@@ -3,7 +3,8 @@
     "pages/home/index",
     "pages/message/index",
     "pages/my/index",
-    "pages/chat/index"
+    "pages/chat/index",
+    "pages/release/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
