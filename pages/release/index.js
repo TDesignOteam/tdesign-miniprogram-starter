@@ -1,5 +1,4 @@
 // pages/release/index.js
-import { ajax } from '../../api/api';
 
 Page({
   /**
@@ -26,19 +25,10 @@ Page({
     config: {
       count: 1,
     },
-    tags: [],
-  },
-  onLoad: function () {
-    // 使用 Mock
-    ajax('/tags', (res) => {
-      this.setData({
-        tags: res.data,
-      });
-    });
+    tags: ['AI绘画', '版权素材', '原创', '风格灵动'],
   },
   handleSuccess(e) {
     const { files } = e.detail;
-    console.log(files);
     this.setData({
       originFiles: files,
     });
@@ -50,9 +40,6 @@ Page({
     this.setData({
       originFiles,
     });
-  },
-  handleClick(e) {
-    console.log(e.detail.file);
   },
   release() {
     wx.reLaunch({

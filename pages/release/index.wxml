@@ -2,7 +2,7 @@
 <view class="release-container">
   <view class="upload box">
     <t-upload t-class="upload-class" media-type="{{['image']}}" files="{{originFiles}}" gridConfig="{{gridConfig}}"
-      bind:success="handleSuccess" bind:remove="handleRemove" bind:click="handleClick" max="4" />
+      bind:success="handleSuccess" bind:remove="handleRemove" max="4" />
   </view>
   <view class="desc box">
     <view class="desc-label">添加描述</view>
