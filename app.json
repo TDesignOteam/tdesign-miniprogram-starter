@@ -4,7 +4,8 @@
     "pages/message/index",
     "pages/my/index",
     "pages/my/info-edit/index",
-    "pages/chat/index"
+    "pages/chat/index",
+    "pages/release/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
