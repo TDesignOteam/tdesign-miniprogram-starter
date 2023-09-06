@@ -3,6 +3,7 @@ import config from './config'
 import Mock from './mock/index'
 import createBus from './utils/eventBus'
 import { connectSocket, fetchUnreadNum } from './services/chat'
+
 if (config.isMock) {
   Mock()
 }
