@@ -2,10 +2,6 @@ import {
   request
 } from '../mock/request'
 
-export const getHomeCards = () => {
-  return request('/home/cards')
-}
+export const getHomeCards = () => request('/home/cards')
 
-export const getHomeSwipers = () => {
-  return request('/home/swpiers')
-}
+export const getHomeSwipers = () => request('/home/swpiers')
