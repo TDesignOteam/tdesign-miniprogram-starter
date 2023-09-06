@@ -21,7 +21,7 @@ Page({
     this.setData({service:ServiceMockData['api/service'].data.service})
   },
   onShow(){
-    var Token = wx.getStorageSync('access_token');
+    const Token = wx.getStorageSync('access_token');
     const {image,name,star,city} = LoginMockData['api/login'].data
     if(Token){
       this.setData({
@@ -82,6 +82,9 @@ Page({
         wx.navigateTo({
           url: 'url',
         })
+        break;
+      }
+      default :{
         break;
       }
     }

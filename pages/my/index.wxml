@@ -25,7 +25,7 @@
         <t-icon class='t-class-icon-edit' slot='right-icon' name='edit' bindtap='GotoEdit'></t-icon>
       </t-cell>
       <t-cell  wx-if='{{!isLoad}}' title="请先登录/注册" t-cell-title='unLoginTitle' bindtap="Login" bordered='{{false}}' t-class-title='loginTitle' hover>
-        <t-icon name="user" class='icon' slot="left-icon" />
+        <t-icon name="user" class='icon' slot="left-icon"  size='26px' />
       </t-cell>
     </t-cell-group>
     </view>
@@ -83,7 +83,7 @@
       class='cell-set'
       data-type='{{item.type}}'
       bind:click="onClickCell">
-        <t-icon name="{{item.icon}}"  slot="left-icon" class='cell-left-icon'/>
+        <t-icon name="{{item.icon}}"  slot="left-icon" class='cell-left-icon' size='24px'/>
         </t-cell>
     </t-cell-group>
   </view>

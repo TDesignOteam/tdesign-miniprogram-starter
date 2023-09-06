@@ -1,5 +1,4 @@
 module.exports = {
-  //模拟接口
   'api/login':{
     code:200,
     message:'success',
