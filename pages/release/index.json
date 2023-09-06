@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "发布动态",
+  "usingComponents": {
+    "t-upload": "tdesign-miniprogram/upload/upload",
+    "t-textarea": "tdesign-miniprogram/textarea/textarea",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-check-tag": "tdesign-miniprogram/check-tag/check-tag",
+    "t-button": "tdesign-miniprogram/button/button"
+  }
+}
