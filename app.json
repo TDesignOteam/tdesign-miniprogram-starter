@@ -3,8 +3,12 @@
     "pages/home/index",
     "pages/message/index",
     "pages/my/index",
-    "pages/chat/index",
     "pages/search/index"
+    "pages/my/info-edit/index",
+    "pages/chat/index",
+    "pages/login/login",
+    "pages/loginCode/loginCode"
+    "pages/release/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -29,6 +33,5 @@
       }
     ]
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
