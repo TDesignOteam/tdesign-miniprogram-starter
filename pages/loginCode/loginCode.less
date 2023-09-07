@@ -1,0 +1,47 @@
+/* pages/loginCode/loginCode.wxss */
+@import '/variable.less';
+@td-button-primary-disabled-color: #B5C7FF;
+
+.headline {
+  color: @gy1;
+  font-size: @headline-medium;
+  font-weight: 600;
+  line-height: 36px;
+  font-family: "PingFang SC";
+  opacity: 1;
+  text-align: left;
+}
+
+.welcome {
+  .headline();
+  width: 231px;
+  height: 36px;
+  margin: 8px auto 16px 20px;
+}
+
+.info {
+  color: @gy3;
+  font-size: @body-small;
+  font-weight: 400;
+  font-family: "PingFang SC";
+  text-align: left;
+  line-height: 20px;
+  margin: 16px auto 16px 20px;
+}
+
+.verify-code {
+  margin: 12px;
+  font-size: @body-large;
+
+  .verify {
+    color: @brand7-normal;
+  }
+
+  .disabled {
+    color: @td-button-primary-disabled-color;
+  }
+}
+
+.login-button {
+  margin: 16px;
+}
