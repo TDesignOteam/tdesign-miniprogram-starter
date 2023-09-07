@@ -1,10 +1,10 @@
 import { config } from '../config/index';
+import delay from './delay';
+import { getSearchHistoryMock, getSearchPopularMock } from '../model/search';
 
 /** 获取搜索历史 */
 function mockSearchHistory() {
-  const { delay } = require('./delay');
-  const { getSearchHistory } = require('../model/search');
-  return delay().then(() => getSearchHistory());
+  return delay().then(() => getSearchHistoryMock());
 }
 
 /** 获取搜索历史 */
@@ -17,14 +17,12 @@ export function getSearchHistory() {
   });
 }
 
-/** 获取搜索历史 */
+/** 获取搜索热点 */
 function mockSearchPopular() {
-  const { delay } = require('./delay');
-  const { getSearchPopular } = require('../model/search');
-  return delay().then(() => getSearchPopular());
+  return delay().then(() => getSearchPopularMock());
 }
 
-/** 获取搜索历史 */
+/** 获取搜索热点 */
 export function getSearchPopular() {
   if (config.useMock) {
     return mockSearchPopular();
