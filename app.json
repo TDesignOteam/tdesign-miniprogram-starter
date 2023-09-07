@@ -4,6 +4,8 @@
     "pages/message/index",
     "pages/my/index",
     "pages/chat/index",
+    "pages/login/login",
+    "pages/loginCode/loginCode"
     "pages/release/index"
   ],
   "window": {

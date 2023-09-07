@@ -24,8 +24,12 @@ Component({
       const curPage = pages[pages.length - 1];
       if (curPage) {
         const nameRe = /pages\/(\w+)\/index/.exec(curPage.route);
-        if (nameRe[1])
-          this.setData({ value: nameRe[1] })
+        if (nameRe === null) return
+        if (nameRe[1] && nameRe) {
+          this.setData({
+            value: nameRe[1]
+          })
+        }
       }
 
       // 同步全局未读消息数量
