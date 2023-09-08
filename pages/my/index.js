@@ -90,8 +90,6 @@ Page({
     }
   },
   GotoEdit(){
-    wx.navigateTo({
-      url: 'url',
-    })
-  }
+    wx.navigateTo({ url: '/pages/my/info-edit/index' });
+  },
 })
