@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "t-navbar": "tdesign-miniprogram/navbar/navbar",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-badge": "tdesign-miniprogram/badge/badge"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

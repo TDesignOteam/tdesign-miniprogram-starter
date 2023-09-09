@@ -44,6 +44,7 @@
     "useCompilerPlugins": [
       "less"
     ],
+    "condition": false,
     "ignoreUploadUnusedFiles": true
   },
   "compileType": "miniprogram",
