@@ -1,8 +1,5 @@
 {
   "pages": [
-    
-    "pages/setup/index",
-    "pages/dataCenter/index",
     "pages/home/index",
     "pages/message/index",
     "pages/my/index",
@@ -10,6 +7,8 @@
     "pages/chat/index",
     "pages/login/login",
     "pages/loginCode/loginCode",
+    "pages/dataCenter/index",
+    "pages/setup/index",
     "pages/release/index"
   ],
   "window": {
