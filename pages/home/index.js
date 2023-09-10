@@ -1,8 +1,5 @@
 import Message from 'tdesign-miniprogram/message/index';
-import {
-  getHomeCards,
-  getHomeSwipers
-} from '../../api/home'
+import request from '../../api/request';
 
 
 // 获取应用实例
@@ -23,7 +20,8 @@ Page({
   },
   // 生命周期
   async onReady() {
-    const [cardRes, swiperRes] = await Promise.all([getHomeCards(), getHomeSwipers()])
+    const [cardRes, swiperRes] = await Promise.all([request('/home/cards').then(res => res.data), request('/home/swipers').then(res => res.data)])
+
     this.setData({
       cardInfo: cardRes.data,
       swiperList: swiperRes.data
@@ -83,7 +81,6 @@ Page({
   bindViewTap() {
     wx.navigateTo({
       url: '../logs/logs',
-     })
+    })
   },
 })
-

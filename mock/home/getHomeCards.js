@@ -1,6 +1,6 @@
-export const homeService = [{
+export default {
   path: '/home/cards',
-  response: {
+  data: {
     code: 200,
     message: '请求成功',
     data: [{
@@ -69,12 +69,5 @@ export const homeService = [{
         ],
       }
     ],
-  },
-}, {
-  path: '/home/swpiers',
-  response: {
-    code: 200,
-    message: '请求成功',
-    data: new Array(6).fill('/static/home/swiper0.png')
   }
-}]
+}
