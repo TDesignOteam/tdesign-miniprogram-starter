@@ -31,7 +31,7 @@
                         data-index="{{index}}"
                         wx:key="*this"
                 >
-                    <t-tag class="history-item margin-12" max-width="{{343}}" variant="light">{{item;}}</t-tag>
+                    <t-tag class="history-item margin-12" max-width="{{343}}" variant="light">{{item}}</t-tag>
                 </view>
             </view>
         </view>
@@ -50,7 +50,7 @@
                         wx:key="*this"
                 >
                     <t-tag class="popular-item margin-12" max-width="{{343}}" variant="light"
-                           icon="search">{{item;}}
+                           icon="search">{{item}}
                     </t-tag>
                 </view>
             </view>
