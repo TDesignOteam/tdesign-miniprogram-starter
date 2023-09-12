@@ -6,7 +6,7 @@
     "pages/my/info-edit/index",
     "pages/chat/index",
     "pages/login/login",
-    "pages/loginCode/loginCode"
+    "pages/loginCode/loginCode",
     "pages/release/index"
   ],
   "window": {
