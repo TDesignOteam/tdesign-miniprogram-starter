@@ -2,10 +2,17 @@
 
 @home-tab-item-height: 96rpx;
 
-.home {
+page {
   height: 100vh;
   box-sizing: border-box;
   font-family: 'PingFang SC', 'Helvetica Neue', sans-serif;
+}
+
+.home {
+
+  background-color: @bg-color;
+  height: calc(100% - @tab-bar-height);
+  overflow: auto;
 
   &__content {
     height: calc(100% - @nav-bar-height);
@@ -43,8 +50,8 @@
   position: fixed;
   bottom: 208rpx;
   right: 32rpx;
+
   .relese-button {
     width: 200rpx;
   }
 }
-
