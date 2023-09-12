@@ -1,89 +1,89 @@
 <!--logs.wxml-->
 <view class="container">
-  <view class = 'info'>
+  <view class = "info">
     <view class = "person-info">
-    <t-cell-group class = 'cell-group'>
+    <t-cell-group class = "cell-group">
       <t-cell
-      class='my_cell'
-      wx-if='{{isLoad}}' 
-      bordered='{{false}}'
+      class="my_cell"
+      wx:if="{{isLoad}}" 
+      bordered="{{false}}"
       hover>
-      <t-avatar class="avatar" image="{{image}}"  slot="left-icon"  size='large'/>
-      <view class="person-name" slot='note'>
-        <view class='name'>{{name}}</view>
-        <view class='person-tag'>
-          <view class='star'>
-            <t-icon name='discount' class='icon-star'/>
-            <view class='name-star'>{{star}}</view>
+      <t-avatar class="avatar" image="{{image}}"  slot="left-icon"  size="large"/>
+      <view class="person-name" slot="note">
+        <view class="name">{{name}}</view>
+        <view class="person-tag">
+          <view class="star">
+            <t-icon name="discount" class="icon-star"/>
+            <view class="name-star">{{star}}</view>
           </view>
-          <view class='star'>
-            <t-icon name="location" class='icon-star'/>
-            <view class='name-star'>{{city}}</view>
+          <view class="star">
+            <t-icon name="location" class="icon-star"/>
+            <view class="name-star">{{city}}</view>
           </view>
         </view>
         </view>
-        <t-icon class='t-class-icon-edit' slot='right-icon' name='edit' bindtap='GotoEdit'></t-icon>
+        <t-icon class="t-class-icon-edit" slot="right-icon" name="edit" bindtap="GotoEdit"></t-icon>
       </t-cell>
-      <t-cell  wx-if='{{!isLoad}}' title="请先登录/注册" t-cell-title='unLoginTitle' bindtap="Login" bordered='{{false}}' t-class-title='loginTitle' hover>
-        <t-icon name="user" class='icon' slot="left-icon"  size='26px' />
+      <t-cell  wx:if="{{!isLoad}}" title="请先登录/注册" t-cell-title="unlogintitle" bindtap="Login" bordered="{{false}}" t-class-title="loginTitle" hover>
+        <t-icon name="user" class="icon" slot="left-icon"  size="26px" />
       </t-cell>
     </t-cell-group>
     </view>
     <t-divider/>
-    <view class='Release-catalog'>
-    <view class='Release all'>
-    <view class='public'>
-      <t-icon name='root-list' class='Release-icon'></t-icon>
+    <view class="release-catalog">
+    <view class="release all">
+    <view class="public">
+      <t-icon name="root-list" class="release-icon"></t-icon>
     </view>
-    <view class='Release-name'>全部发布</view>
+    <view class="release-name">全部发布</view>
     </view>
-    <view class='Release'>
-    <view class='examine'>
-      <t-icon name='search' class='Release-icon'></t-icon>
+    <view class="release">
+    <view class="examine">
+      <t-icon name="search" class="release-icon"></t-icon>
     </view>
-    <view class='Release-name'>审核中</view>
+    <view class="release-name">审核中</view>
     </view>
-    <view class='Release'>
-    <view class='released'>
-      <t-icon name='upload' class='Release-icon'></t-icon>
+    <view class="release">
+    <view class="released">
+      <t-icon name="upload" class="release-icon"></t-icon>
     </view>
-    <view class='Release-name'>已发布</view>
+    <view class="release-name">已发布</view>
     </view>
-    <view class='Release'>
-    <view class='draft'>
-      <t-icon name='file-copy' class='Release-icon'></t-icon>
+    <view class="release">
+    <view class="draft">
+      <t-icon name="file-copy" class="release-icon"></t-icon>
     </view>
-    <view class='Release-name'>草稿箱</view>
+    <view class="release-name">草稿箱</view>
     </view>
     </view>
   </view>
-  <view class='service'>
-  <view class='tip'>推荐服务</view>
-  <view class='box'>
-    <view wx:for='{{service}}' 
+  <view class="service">
+  <view class="tip">推荐服务</view>
+  <view class="box">
+    <view wx:for="{{service}}" 
     wx:key="item"  
-    data-type='{{item.type}}'
+    data-type="{{item.type}}"
     bindtap="onClickCell"
-    class='service-box' >
-    <view class='service-image'>
+    class="service-box" >
+    <view class="service-image">
     <t-image src="{{item.image}}" mode="aspectFill" />
     </view>
-    <view class='service-name'>{{item.name}}</view>
+    <view class="service-name">{{item.name}}</view>
     </view>
   </view>
   </view>
-  <view class='setting'> 
-    <t-cell-group class='set-group'>
+  <view class="setting"> 
+    <t-cell-group class="set-group">
       <t-cell wx:for="{{settingdata}}" wx:key="item" 
       title="{{item.name}}" 
       hover arrow  
       bordered="{{false}}" 
-      t-class-right-icon='cell-icon' 
-      t-class-note='cell-note' 
-      class='cell-set'
-      data-type='{{item.type}}'
+      t-class-right-icon="cell-icon" 
+      t-class-note="cell-note" 
+      class="cell-set"
+      data-type="{{item.type}}"
       bind:click="onClickCell">
-        <t-icon name="{{item.icon}}"  slot="left-icon" class='cell-left-icon' size='24px'/>
+        <t-icon name="{{item.icon}}"  slot="left-icon" class="cell-left-icon" size="24px"/>
         </t-cell>
     </t-cell-group>
   </view>
