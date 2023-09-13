@@ -5,7 +5,7 @@ const mockData = [
   {
     userId: 1,
     name: 'Sean',
-    avatar: '/images/mock/chat/avatar-Sean.png',
+    avatar: '/static/chat/avatar-Sean.png',
     messages: [
       { messageId: 1, from: 1, content: '那明天准时见哦😊', time: 1690646400000, read: true },
       { messageId: 2, from: 0, content: '好的，我会记得的', time: 1690646400000, read: true },
@@ -16,7 +16,7 @@ const mockData = [
   {
     userId: 2,
     name: 'Mollymolly',
-    avatar: '/images/mock/chat/avatar-Mollymolly.png',
+    avatar: '/static/chat/avatar-Mollymolly.png',
     messages: [
       { messageId: 5, from: 1, content: '好久不见，最近咋样？', time: 1692100800000, read: true },
     ]
@@ -24,7 +24,7 @@ const mockData = [
   {
     userId: 3,
     name: 'Andrew',
-    avatar: '/images/mock/chat/avatar-Andrew.png',
+    avatar: '/static/chat/avatar-Andrew.png',
     messages: [
       { messageId: 6, from: 0, content: '现在没空，晚点再联系你哈', time: 1690084800000, read: true },
     ]
@@ -32,7 +32,7 @@ const mockData = [
   {
     userId: 4,
     name: 'Kingdom',
-    avatar: '/images/mock/chat/avatar-Kingdom.png',
+    avatar: '/static/chat/avatar-Kingdom.png',
     messages: [
       { messageId: 7, from: 1, content: '真的吗？', time: 1656880200000, read: true },
     ]
@@ -40,7 +40,7 @@ const mockData = [
   {
     userId: 5,
     name: 'Paige',
-    avatar: '/images/mock/chat/avatar-Paige.png',
+    avatar: '/static/chat/avatar-Paige.png',
     messages: [
       { messageId: 8, from: 1, content: '此次要评审的首页和专区页改版的交互方案', time: 1652963880000, read: true },
     ]
