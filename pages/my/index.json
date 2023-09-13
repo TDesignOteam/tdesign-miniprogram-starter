@@ -1,11 +1,14 @@
 {
-  "navigationBarTitleText": "我的",
   "usingComponents": {
     "t-cell": "tdesign-miniprogram/cell/cell",
     "t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
     "t-avatar": "tdesign-miniprogram/avatar/avatar",
     "t-divider": "tdesign-miniprogram/divider/divider",
     "t-icon": "tdesign-miniprogram/icon/icon",
-    "t-image": "tdesign-miniprogram/image/image"
-  }
+    "t-image": "tdesign-miniprogram/image/image",
+    "t-navbar": "tdesign-miniprogram/navbar/navbar",
+    "t-drawer": "tdesign-miniprogram/drawer/drawer"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
 }

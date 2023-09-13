@@ -22,7 +22,7 @@ Page({
   onShow(){
     const Token = wx.getStorageSync('access_token');
     const {image,name,star,city} = LoginMockData['api/login'].data
-    if(Token){
+    if(Token)
       this.setData({
         isLoad:true,
         image:image,
@@ -30,11 +30,10 @@ Page({
         star:star,
         city:city,
        })
-      }
   },
   Login(e){
     wx.navigateTo({
-      url: 'url',
+      url: '/pages/login/login',
     })
   },
   onClickCell(e)

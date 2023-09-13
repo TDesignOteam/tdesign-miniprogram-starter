@@ -1,4 +1,8 @@
 <!--logs.wxml-->
+<t-navbar class="nav-bar" title="我的">
+  <t-icon slot="left" name="view-list" size="48rpx"/>
+</t-navbar>
+<t-drawer visible="{{visible}}" items="{{sidebar}}" placement="left" title="页面目录" />
 <view class="container">
   <view class = "info">
     <view class = "person-info">
@@ -16,7 +20,7 @@
             <t-icon name="discount" class="icon-star"/>
             <view class="name-star">{{star}}</view>
           </view>
-          <view class="star">
+          <view class="city">
             <t-icon name="location" class="icon-star"/>
             <view class="name-star">{{city}}</view>
           </view>
@@ -24,8 +28,8 @@
         </view>
         <t-icon class="t-class-icon-edit" slot="right-icon" name="edit" bindtap="GotoEdit"></t-icon>
       </t-cell>
-      <t-cell  wx:if="{{!isLoad}}" title="请先登录/注册" t-cell-title="unlogintitle" bindtap="Login" bordered="{{false}}" t-class-title="loginTitle" hover>
-        <t-icon name="user" class="icon" slot="left-icon"  size="26px" />
+      <t-cell  wx:if="{{!isLoad}}" title="请先登录/注册" class="my_cell_box" t-cell-title="unlogintitle" bindtap="Login" bordered="{{false}}" t-class-title="loginTitle" hover>
+        <t-icon name="user" class="icon" slot="left-icon"  size="32px" />
       </t-cell>
     </t-cell-group>
     </view>
@@ -74,16 +78,27 @@
   </view>
   <view class="setting"> 
     <t-cell-group class="set-group">
-      <t-cell wx:for="{{settingdata}}" wx:key="item" 
-      title="{{item.name}}" 
+      <t-cell
+      title="联系客服" 
       hover arrow  
       bordered="{{false}}" 
       t-class-right-icon="cell-icon" 
       t-class-note="cell-note" 
-      class="cell-set"
-      data-type="{{item.type}}"
+      class="cell-service"
+      data-type="service"
       bind:click="onClickCell">
-        <t-icon name="{{item.icon}}"  slot="left-icon" class="cell-left-icon" size="24px"/>
+        <t-icon name="service"  slot="left-icon" class="cell-left-icon" size="24px"/>
+        </t-cell>
+        <t-cell
+      title="设置" 
+      hover arrow  
+      bordered="{{false}}" 
+      t-class-right-icon="cell-icon" 
+      t-class-note="cell-note" 
+      class="cell-setting"
+      data-type="setting"
+      bind:click="onClickCell">
+        <t-icon name="setting"  slot="left-icon" class="cell-left-icon" size="24px"/>
         </t-cell>
     </t-cell-group>
   </view>

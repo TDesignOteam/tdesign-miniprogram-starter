@@ -14,10 +14,13 @@
   padding: 0rpx 0rpx !important;
   justify-content: start !important;
 }
+.nav-bar {
+  border-bottom: 1rpx solid #e7e7e7;
+}
 .info{
   width: 686rpx;
   height: 408rpx;
-  border-radius: 12rpx;
+  border-radius: 12px;
   opacity: 1;
   background: #ffffff;
 }
@@ -34,15 +37,6 @@
   border-radius: 999rpx;
   opacity: 1;
   margin:0rpx 32rpx 0rpx 32rpx !important;
-}
-.logintitle{
-    opacity: 1;
-    color: #000000e6;
-    font-size: 16px;
-    font-weight: 600;
-    font-family: "PingFang SC";
-    text-align: center;
-    line-height: 24px;
 }
 .icon{
   width: 128rpx !important;
@@ -69,18 +63,17 @@
 .t-cell__left{
   margin-right: 0rpx !important;
 }
-
-.unlogintitle{
-    width: 208rpx;
-    height: 48rpx;
-    opacity: 1;
-    color: #000000e6;
-    font-size: 32rpx;
-    font-weight: 600;
-    font-family: "PingFang SC";
-    text-align: center;
-    line-height: 48rpx;
+.my_cell_box .t-cell__title-text{
+  font-weight: 600 !important;
 }
+.t-cell__title-text{
+    color: #000000e6 !important;
+    font-size: 16px !important;
+    font-weight: 400;
+    font-family: "PingFang SC";
+    text-align: left;
+    line-height: 24px;
+   }
 .t-class-icon-edit{
   margin: 44rpx 32rpx !important;
   width: 40rpx;
@@ -116,6 +109,15 @@
 }
 .star{
   width: 112rpx;
+  height: 40rpx;
+  border-radius: 3rpx;
+  opacity: 1;
+  background: #f3f3f3;
+  display: flex;
+  margin-right: 16rpx;
+}
+.city{
+  width: 46px;
   height: 40rpx;
   border-radius: 3rpx;
   opacity: 1;
@@ -264,15 +266,26 @@
 .setting{
   width: 343px;
   height: auto;
-  border-radius: 12px;
+  border-radius: 12px !important;
   opacity: 1;
   margin-top: 18px;
+  background: #ffffff;
 }
-.cell-set{
-  width: 343px;
+.t-cell-group{
+  border-radius: 12px;
+}
+.cell-service, .cell-setting{
+  width: 327px !important;
   height: 56px !important;
   opacity: 1;
-  background: #ffffff;
+  margin-left: 16px;
+  background-color: transparent !important;
+}
+.cell-service{
+  border-bottom: 0.5px solid #e7e7e7;
+}
+.cell-setting{
+  border: 0 solid #e7e7e7;
 }
 .cell-icon{
   padding-right: 16px !important;
@@ -282,7 +295,7 @@
   height: 24px;
   color: #0052d9;
   opacity: 1;
-  margin: 16px 12px 16px 16px !important;
+  margin: 16px 12px 16px 0px !important;
 }
 .set-group .t-cell{
   padding: 0px 0px !important;
