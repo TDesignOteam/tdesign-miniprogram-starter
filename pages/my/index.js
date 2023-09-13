@@ -1,5 +1,4 @@
-// logs.js
-const util = require('../../utils/util.js')
+
 const ServiceMockData = require('../../mock/service.js')
 const LoginMockData = require('../../mock/personinfo.js')
 

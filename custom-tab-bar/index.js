@@ -2,8 +2,21 @@ const app = getApp()
 
 Component({
   data: {
-    value: '',        // 初始值设置为空，避免第一次加载时闪烁
-    unreadNum: 0,     // 未读消息数量
+    value: '',  // 初始值设置为空，避免第一次加载时闪烁
+    unreadNum: 0, // 未读消息数量
+    list: [{
+      icon: 'home',
+      value: 'index',
+      label: '首页',
+    },{
+      icon: 'chat',
+      value: 'notice',
+      label: '消息',
+    }, {
+      icon: 'user',
+      value: 'my',
+      label: '我的'
+    }]
   },
   lifetimes: {
     ready() {
