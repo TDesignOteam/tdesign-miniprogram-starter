@@ -27,8 +27,8 @@
         </view>
         <t-icon class="t-class-icon-edit" slot="right-icon" name="edit" bindtap="GotoEdit"></t-icon>
       </t-cell>
-      <t-cell  wx:if="{{!isLoad}}" title="请先登录/注册" class="my_cell_box" t-cell-title="unlogintitle" bindtap="Login" bordered="{{false}}" t-class-title="loginTitle" hover>
-        <t-icon name="user" class="icon" slot="left-icon"  size="32px" />
+      <t-cell  wx:if="{{!isLoad}}" title="请先登录/注册" class="my_cell_box"  bindtap="Login" bordered="{{false}}"  hover>
+        <t-icon name="user" class="icon" slot="left-icon"  size="64rpx" />
       </t-cell>
     </t-cell-group>
     </view>
@@ -52,29 +52,9 @@
   </t-grid>
   </view>
   <view class="setting"> 
-    <t-cell-group class="set-group">
-      <t-cell
-      title="联系客服" 
-      hover arrow  
-      bordered="{{false}}" 
-      t-class-right-icon="cell-icon" 
-      t-class-note="cell-note" 
-      class="cell-service"
-      data-type="service"
-      bind:click="onClickCell">
-        <t-icon name="service"  slot="left-icon" class="cell-left-icon" size="24px"/>
-        </t-cell>
-        <t-cell
-      title="设置" 
-      hover arrow  
-      bordered="{{false}}" 
-      t-class-right-icon="cell-icon" 
-      t-class-note="cell-note" 
-      class="cell-setting"
-      data-type="setting"
-      bind:click="onClickCell">
-        <t-icon name="setting"  slot="left-icon" class="cell-left-icon" size="24px"/>
-        </t-cell>
-    </t-cell-group>
+    <t-cell-group theme="card" class="set-group">
+  <t-cell title="联系客服" leftIcon="service" t-class-note="cell-note"  hover arrow />
+  <t-cell title="设置" leftIcon="setting"  t-class-note="cell-note"  hover arrow />
+</t-cell-group>
   </view>
 </view>

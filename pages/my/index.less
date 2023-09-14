@@ -1,35 +1,32 @@
 @import '/variable.less';
-page {
-  height: 100vh;
+
+page{
+  height: 100%;
 }
 .container{
-  width: 750rpx;
-  height: 100%;
+
+  height: calc(100% - @tab-bar-height);
   opacity: 1;
   background: @bg-color;
   padding: 0rpx 0rpx !important;
   justify-content: start !important;
+  overflow: auto;
 }
 .nav-bar {
   border-bottom: 1rpx solid #e7e7e7;
 }
 .info{
-  width: 686rpx;
-  height: 408rpx;
   border-radius: 12px;
-  opacity: 1;
   background: @bg-color-white;
+  margin: 0rpx 32rpx 0rpx 32rpx;
 }
 .person-info{
   width: 686rpx;
-  height: 128rpx;
   opacity: 1;
   margin-top: 32rpx;
   margin-bottom: 42rpx;
 }
 .avatar {
-  width: 128rpx !important;
-  height: 128rpx !important;
   border-radius: 999rpx;
   opacity: 1;
   margin:0rpx 32rpx 0rpx 32rpx !important;
@@ -52,7 +49,6 @@ page {
   margin: 32rpx !important;
 }
 .cell-group .t-cell{
-  width: 100% !important;
   height: 128rpx;
   padding: 0rpx 0rpx !important;
 }
@@ -64,16 +60,14 @@ page {
 }
 .t-cell__title-text{
     color: #000000e6 !important;
-    font-size: 16px !important;
+    font-size: 32rpx !important;
     font-weight: 400;
     font-family: "PingFang SC";
     text-align: left;
-    line-height: 24px;
+    line-height: 48rpx;
    }
 .t-class-icon-edit{
   margin: 44rpx 32rpx !important;
-  width: 40rpx;
-  height: 40rpx;
 }
 .my_cell .t-cell__right{
   margin-left: 0rpx !important;
@@ -81,7 +75,7 @@ page {
 .t-icon-edit{
   margin: 0rpx;
   opacity: 1;
-  font-size: 20px;
+  font-size: 40rpx;
   color: #000000e6;
 }
 .person-name{
@@ -98,14 +92,10 @@ page {
   height: 48rpx;
 }
 .person-tag{
-  width: 195px;
-  height: 20px;
   display: flex;
   margin-top: 8px;
 }
 .star{
-  width: 112rpx;
-  height: 40rpx;
   border-radius: 3rpx;
   opacity: 1;
   background: #f3f3f3;
@@ -113,8 +103,6 @@ page {
   margin-right: 16rpx;
 }
 .city{
-  width: 46px;
-  height: 40rpx;
   border-radius: 3rpx;
   opacity: 1;
   background: #f3f3f3;
@@ -122,16 +110,12 @@ page {
   margin-right: 16rpx;
 }
 .icon-star{
-  height: 24rpx ;
-  width: 24rpx ;
   display: inline-block !important;
-  padding: 8rpx 4rpx 8rpx 6rpx;
-  font-size: 13px;
+  padding: 8rpx 4rpx 8rpx 12rpx;
+  font-size: 24rpx;
 }
 .name-star{
     display: inline-block !important;
-    width: 60rpx;
-    height: 32rpx;
     opacity: 1;
     color: #000000e6;
     font-size: 20rpx;
@@ -139,12 +123,7 @@ page {
     font-family: "PingFang SC";
     text-align: center;
     line-height: 32rpx;
-    padding: 4rpx 0rpx;
-}
-.release{
-  width: 85.75px;
-  height: 68px;
-  opacity: 1;
+    padding: 4rpx 12rpx 4rpx 0rpx;
 }
 .all{
   border-right: 1px solid #e7e7e7;
@@ -152,7 +131,7 @@ page {
 .block-box {
   display: block;
   margin-bottom: 32rpx;
-  margin-top: 19px;
+  margin-top: 38rpx;
 }
 .grid-item__image {
   --td-button-medium-icon-font-size: 48rpx;
@@ -168,81 +147,56 @@ page {
   padding: 0px !important;
 }
 .service{
-  width: 343px;
-  height: 226px;
-  border-radius: 12px;
+  border-radius: 24rpx;
   opacity: 1;
   background: @bg-color-white;
-  margin-top: 16px;
+  margin: 32rpx 32rpx 0rpx 32rpx;
 }
 .service-item .t-grid-item__content{
-  padding-bottom: 8px !important;
+  padding-bottom: 16rpx !important;
 }
 .t-grid-item__text{
-  height: 20px !important;
+  height: 40rpx !important;
 }
 .block{
-  height: 184px;
   margin-bottom: 4px;
 }
 .tip{
-  width: 343px;
-  height: 22px;
-  margin-top: 16px;
+  width: auto;
+  height: 44rpx;
+  margin-top: 32rpx;
   opacity: 1;
   color: #000000e6;
-  font-size: 14px;
+  font-size: 28rpx;
   font-weight: 600;
   font-family: "PingFang SC";
   text-align: left;
-  line-height: 22px;
-  padding-left: 20px;
+  line-height: 44rpx;
+  padding-left: 40rpx;
 }
 .setting{
-  width: 343px;
   height: auto;
-  border-radius: 12px !important;
+  border-radius: 24rpx !important;
   opacity: 1;
-  margin-top: 18px;
+  margin: 36rpx 32rpx 0rpx 32rpx;
   background: @bg-color-white;
 }
-.t-cell-group{
-  border-radius: 12px;
+.set-group{
+  width:686rpx;
+  border-radius: 24rpx;
+  margin: 0rpx !important;
 }
-.cell-service, .cell-setting{
-  width: 327px !important;
-  height: 56px !important;
-  opacity: 1;
-  margin-left: 16px;
-  background-color: transparent !important;
-}
-.cell-service{
-  border-bottom: 0.5px solid #e7e7e7;
-}
-.cell-setting{
-  border: 0 solid #e7e7e7;
-}
-.cell-icon{
-  padding-right: 16px !important;
-}
-.cell-left-icon{
-  width: 24px;
-  height: 24px;
-  color: #0052d9;
-  opacity: 1;
-  margin: 16px 12px 16px 0px !important;
-}
-.set-group .t-cell{
-  padding: 0px 0px !important;
+.set-group .t-cell__left{
+  margin-right: 24rpx !important;
 }
 .cell-note{
-    width: 235px;
-    height: 24px;
+    width: 470rpx;
+    height: 48rpx;
     opacity: 1;
     color: #000000e6;
-    font-size: 16px;
+    font-size: 32rpx;
     font-weight: 400;
     font-family: "PingFang SC";
     text-align: left;
-    line-height: 24px;
+    line-height: 48rpx;
 }
