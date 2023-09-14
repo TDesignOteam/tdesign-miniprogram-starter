@@ -1,9 +1,8 @@
-<!--logs.wxml-->
+<!--pages/my/index.wxml-->
+<view class="container">
 <t-navbar class="nav-bar" title="我的">
   <t-icon slot="left" name="view-list" size="48rpx"/>
 </t-navbar>
-<t-drawer visible="{{visible}}" items="{{sidebar}}" placement="left" title="页面目录" />
-<view class="container">
   <view class = "info">
     <view class = "person-info">
     <t-cell-group class = "cell-group">
@@ -34,47 +33,23 @@
     </t-cell-group>
     </view>
     <t-divider/>
-    <view class="release-catalog">
-    <view class="release all">
-    <view class="public">
-      <t-icon name="root-list" class="release-icon"></t-icon>
-    </view>
-    <view class="release-name">全部发布</view>
-    </view>
-    <view class="release">
-    <view class="examine">
-      <t-icon name="search" class="release-icon"></t-icon>
-    </view>
-    <view class="release-name">审核中</view>
-    </view>
-    <view class="release">
-    <view class="released">
-      <t-icon name="upload" class="release-icon"></t-icon>
-    </view>
-    <view class="release-name">已发布</view>
-    </view>
-    <view class="release">
-    <view class="draft">
-      <t-icon name="file-copy" class="release-icon"></t-icon>
-    </view>
-    <view class="release-name">草稿箱</view>
-    </view>
+    <view>
+    <t-grid class="block-box">
+      <t-grid-item text="全部发布" icon="root-list" class="all item"/>
+      <t-grid-item text="审核中" icon="search" class="item"/>
+      <t-grid-item text="已发布" icon="upload" class="item"/>
+      <t-grid-item text="草稿箱" icon="file-copy" class="item" />
+    </t-grid>
     </view>
   </view>
   <view class="service">
   <view class="tip">推荐服务</view>
-  <view class="box">
-    <view wx:for="{{service}}" 
-    wx:key="item"  
-    data-type="{{item.type}}"
-    bindtap="onClickCell"
-    class="service-box" >
-    <view class="service-image">
-    <t-image src="{{item.image}}" mode="aspectFill" />
-    </view>
-    <view class="service-name">{{item.name}}</view>
-    </view>
-  </view>
+  <t-grid class="block" column="{{4}}">
+  <t-grid-item wx:for="{{service}}"
+    wx:key="item"
+    text="{{item.name}}" image="{{item.image}}"
+    class="service-item" />
+  </t-grid>
   </view>
   <view class="setting"> 
     <t-cell-group class="set-group">

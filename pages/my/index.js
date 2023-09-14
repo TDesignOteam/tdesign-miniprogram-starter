@@ -36,57 +36,6 @@ Page({
       url: '/pages/login/login',
     })
   },
-  onClickCell(e)
-  {
-    const { type } = e.currentTarget.dataset;
-    switch(type){
-      case 'service':{
-        wx.navigateTo({
-          url: 'url',
-        })
-        break;
-      }
-      case 'setting':{
-        wx.navigateTo({
-          url: 'url',
-        })
-        break;
-      }
-      case 'weixin':{
-        wx.navigateTo({
-          url: 'url',
-        })
-        break;
-      }
-      case 'QQ':{
-        wx.navigateTo({
-          url: 'url',
-        })
-        break;
-      }
-      case 'ducument':{
-        wx.navigateTo({
-          url: 'url',
-        })
-        break;
-      }
-      case 'map':{
-        wx.navigateTo({
-          url: 'url',
-        })
-        break;
-      }
-      case 'data':{
-        wx.navigateTo({
-          url: 'url',
-        })
-        break;
-      }
-      default :{
-        break;
-      }
-    }
-  },
   GotoEdit(){
     wx.navigateTo({ url: '/pages/my/info-edit/index' });
   },

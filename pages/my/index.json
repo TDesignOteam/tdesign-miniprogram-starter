@@ -7,8 +7,8 @@
     "t-icon": "tdesign-miniprogram/icon/icon",
     "t-image": "tdesign-miniprogram/image/image",
     "t-navbar": "tdesign-miniprogram/navbar/navbar",
-    "t-drawer": "tdesign-miniprogram/drawer/drawer"
+    "t-grid": "tdesign-miniprogram/grid/grid",
+    "t-grid-item": "tdesign-miniprogram/grid-item/grid-item"
   },
-  "navigationStyle": "custom",
-  "disableScroll": true
+  "navigationStyle": "custom"
 }

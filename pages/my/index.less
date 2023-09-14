@@ -6,9 +6,12 @@
 // .log-item {
 //   margin: 10rpx;
 // }
+page {
+  height: 100vh;
+}
 .container{
   width: 750rpx;
-  height: 1624rpx;
+  height: 100%;
   opacity: 1;
   background: #f5f6f7;
   padding: 0rpx 0rpx !important;
@@ -145,13 +148,6 @@
     line-height: 32rpx;
     padding: 4rpx 0rpx;
 }
-.release-catalog{
-  display: flex;
-  width: 686rpx;
-  height: 136rpx;
-  margin-top: 38rpx;
-  margin-bottom: 32rpx;
-}
 .release{
   width: 85.75px;
   height: 68px;
@@ -160,52 +156,23 @@
 .all{
   border-right: 1px solid #e7e7e7;
 }
-.public,.examine,.released,.draft{
-  width: 40px;
-  height: 40px;
-  margin: 0px 22.88px 8px 22.88px;
-  border-radius: 6px;
-  opacity: 1;
+.block-box {
+  display: block;
+  margin-bottom: 32rpx;
+  margin-top: 19px;
+}
+.grid-item__image {
+  --td-button-medium-icon-font-size: 48rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   background: #f3f3f3;
+  border-radius: 12rpx;
 }
-.public .t-icon{
-  padding: 8px !important;
-  width: 24px !important;
-  height: 24px !important;
-  opacity: 1;
-}
-.examine .t-icon{
-  padding: 8px !important;
-  width: 24px !important;
-  height: 24px !important;
-  opacity: 1;
-}
-.released .t-icon{
-  padding: 8px !important;
-  width: 24px !important;
-  height: 24px !important;
-  opacity: 1;
-}
-.draft .t-icon{
-  padding: 8px !important;
-  width: 24px !important;
-  height: 24px !important;
-  opacity: 1;
-}
-.release-icon{
-  font-size: 24px;
-}
-
-.release-name{
-    width: 85.75px;
-    height: 20px;
-    opacity: 1;
-    color: #000000e6;
-    font-size: 12px;
-    font-weight: 400;
-    font-family: "PingFang SC";
-    text-align: center;
-    line-height: 20px;
+.item .t-grid-item__content{
+  padding: 0px !important;
 }
 .service{
   width: 343px;
@@ -214,6 +181,16 @@
   opacity: 1;
   background: #ffffff;
   margin-top: 16px;
+}
+.service-item .t-grid-item__content{
+  padding-bottom: 8px !important;
+}
+.t-grid-item__text{
+  height: 20px !important;
+}
+.block{
+  height: 184px;
+  margin-bottom: 4px;
 }
 .tip{
   width: 343px;
@@ -227,41 +204,6 @@
   text-align: left;
   line-height: 22px;
   padding-left: 20px;
-}
-.service-image{
-  width: 40px !important;
-  height: 40px !important;
-  border-radius: 6px;
-  opacity: 1;
-  border: 0.5px solid #0000000f;
-  margin: 16px 22.88px 0px 22.88px;
-}
-.service-box{
-  width: 85.75px;
-  height: 92px;
-  opacity: 1;
-}
-.box{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.service-image image{
-  width: 40px !important;
-  height:  40px !important;
-  display: block !important
-}
-.service-name{
-    width: 69.75px;
-    height: 20px;
-    opacity: 1;
-    color: #000000e6;
-    font-size: 12px;
-    font-weight: 400;
-    font-family: "PingFang SC";
-    text-align: center;
-    line-height: 20px;
-    margin: 8px !important;
 }
 .setting{
   width: 343px;
