@@ -44,11 +44,13 @@
   </view>
   <view class="service">
   <view class="tip">推荐服务</view>
-  <t-grid class="block" column="{{4}}">
+  <t-grid class="block" column="{{4}}" >
   <t-grid-item wx:for="{{service}}"
     wx:key="item"
     text="{{item.name}}" image="{{item.image}}"
-    class="service-item" />
+    class="service-item"
+    url="{{item.url}}"
+     />
   </t-grid>
   </view>
   <view class="setting"> 

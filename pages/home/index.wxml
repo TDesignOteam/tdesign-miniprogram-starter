@@ -1,4 +1,5 @@
 <view class="home">
+<!-- 子组件直接进行跳转会有相对路径问题，这里提升至父组件进行 -->
   <nav />
   <view class="home__content">
     <t-tabs defaultValue="recommend">

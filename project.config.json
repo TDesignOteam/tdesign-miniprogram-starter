@@ -1,9 +1,5 @@
 {
   "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
-  "packOptions": {
-    "ignore": [],
-    "include": []
-  },
   "setting": {
     "bundle": false,
     "userConfirmedBundleSwitch": false,
@@ -24,8 +20,6 @@
     "nodeModules": false,
     "enhance": true,
     "useMultiFrameRuntime": true,
-    "useApiHook": true,
-    "useApiHostProcess": true,
     "showShadowRootInWxmlPanel": true,
     "packNpmManually": false,
     "enableEngineNative": false,
@@ -48,12 +42,14 @@
     "ignoreUploadUnusedFiles": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.19.4",
-  "appid": "wxcdfa13a58381f0fc",
-  "projectname": "miniprogram-starter",
   "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  }
+  },
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "appid": "wxcdfa13a58381f0fc"
 }
