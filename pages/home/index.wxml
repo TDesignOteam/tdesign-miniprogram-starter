@@ -1,6 +1,6 @@
 <view class="home">
 <!-- 子组件直接进行跳转会有相对路径问题，这里提升至父组件进行 -->
-  <nav />
+  <nav nav-type="search" />
   <view class="home__content">
     <t-tabs defaultValue="recommend">
       <t-tab-panel label="推荐" value="recommend">

@@ -1,7 +1,8 @@
 <!--pages/message/message.wxml-->
-<t-navbar class="nav-bar" title="全部消息">
+<!-- <t-navbar class="nav-bar" title="全部消息">
   <t-icon slot="left" name="view-list" size="48rpx" />
-</t-navbar>
+</t-navbar> -->
+<nav nav-type="title" title-text="全部消息" ></nav>
 <scroll-view class="message-list" scroll-y refresher-enabled refresher-triggered="{{ loading }}" bindrefresherrefresh="getMessageList">
   <t-cell
     wx:for="{{ messageList }}"

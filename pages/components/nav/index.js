@@ -3,7 +3,14 @@ Component({
     styleIsolation: 'shared'
   },
   properties: {
-
+    navType: {
+      type: "string",
+      value: ""
+    },
+    titleText: {
+      type: "string",
+      value: ""
+    }
   },
   data: {
     visible: false,
@@ -64,14 +71,24 @@ Component({
       })
     },
     itemClick(e) {
+      const that = this;
       const { isSidebar , url } = e.detail.item;
       if(isSidebar){
         wx.switchTab({
           url: `/${url}`,
+        }).then(() => {
+          // 防止点回tab时，sidebar依旧是展开模式
+          that.setData({
+            visible: false
+          })
         })
       } else {
         wx.navigateTo({
           url: `/${url}`,
+        }).then(() => {
+          that.setData({
+            visible: false
+          })
         })
       }
     },

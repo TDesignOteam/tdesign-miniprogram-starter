@@ -1,8 +1,6 @@
 <!--pages/my/index.wxml-->
 <view class="container">
-<t-navbar class="nav-bar" title="我的">
-  <t-icon slot="left" name="view-list" size="48rpx"/>
-</t-navbar>
+<nav nav-type="title" title-text="我的" />
   <view class = "info">
     <view class = "person-info">
     <t-cell-group class = "cell-group">
@@ -56,7 +54,7 @@
   <view class="setting"> 
     <t-cell-group theme="card" class="set-group">
   <t-cell title="联系客服" leftIcon="service" t-class-note="cell-note"  hover arrow />
-  <t-cell title="设置" leftIcon="setting"  t-class-note="cell-note"  hover arrow />
+  <t-cell title="设置" leftIcon="setting"  t-class-note="cell-note" url="/pages/setup/index"  hover arrow />
 </t-cell-group>
   </view>
 </view>

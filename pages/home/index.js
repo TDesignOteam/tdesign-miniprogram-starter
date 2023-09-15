@@ -72,5 +72,11 @@ Page({
       url: '/pages/release/index',
     });
   },
+
+  openDrawer() {
+    this.setData({
+      visible: true
+    })
+  },
   
 })
