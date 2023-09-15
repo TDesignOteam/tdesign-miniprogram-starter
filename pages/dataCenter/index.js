@@ -1,4 +1,6 @@
 // pages/dataCenter.js
+import request from '../../api/request'
+
 Page({
   
   /**
@@ -25,84 +27,73 @@ Page({
     /**
      * 整体情况
      */
-    wx.request({
-      url: 'https://example.com/ajax?dataType=member',
-      dataType: 'json',
-      success(res) {
-        const totalSituationData = res.data.list;
-        that.setData({ 
-          totalSituationDataList: totalSituationData,
-          totalSituationKeysList: Object.keys(totalSituationData[0])
-        });
+    request('/dataCenter/member').then(res => {
+      const totalSituationData = res.data.template.succ.data.list;
+      that.setData({ 
+        totalSituationDataList: totalSituationData,
+        totalSituationKeysList: Object.keys(totalSituationData[0])
+      });
 
-        // 计算每个.item元素的宽度
-        const itemWidth = `${(750 - 32 * (totalSituationData.length - 1)) / totalSituationData.length}rpx`;
+      // 计算每个.item元素的宽度
+      const itemWidth = `${(750 - 32 * (totalSituationData.length - 1)) / totalSituationData.length}rpx`;
 
-        // 更新.item元素的样式
-        that.setData({
-          memberitemWidth: itemWidth
-        });
-      }
-    });
+      // 更新.item元素的样式
+      that.setData({
+        memberitemWidth: itemWidth
+      });
+    })
+
 
     /**
      * 互动情况
      */
-    wx.request({
-      url: 'https://example.com/ajax?dataType=interaction',
-      dataType: 'json',
-      success(res) {
-        const interactionSituationData = res.data.list;
-        that.setData({ 
-          interactionSituationDataList: interactionSituationData,
-          interactionSituationKeysList: Object.keys( interactionSituationData[0])
-        });
 
-        // 计算每个.item元素的宽度
-        const itemWidth = `${(750 - 32 * (interactionSituationData.length - 1)) / interactionSituationData.length}rpx`;
-        // 更新.item元素的样式
-        that.setData({
-          smallitemWidth: itemWidth
-        });
-      }
-    });
+    request('/dataCenter/interaction').then(res => {
+      const interactionSituationData = res.data.template.succ.data.list;
+      that.setData({ 
+        interactionSituationDataList: interactionSituationData,
+        interactionSituationKeysList: Object.keys( interactionSituationData[0])
+      });
+
+      // 计算每个.item元素的宽度
+      const itemWidth = `${(750 - 32 * (interactionSituationData.length - 1)) / interactionSituationData.length}rpx`;
+      // 更新.item元素的样式
+      that.setData({
+        smallitemWidth: itemWidth
+      });
+
+    })
     /**
      * 完播率
      */ 
-    wx.request({
-      url: 'https://example.com/ajax?dataType=complete_rate',
-      dataType: 'json',
-      success(res) {
-        const completeRateData = res.data.list;
-        that.setData({ 
-          completeRateDataList: completeRateData,
-          completeRateKeysList: Object.keys(completeRateData[0])
-        });
 
-        // 计算每个.item元素的宽度
-        const itemHeight = `${(380) / completeRateData.length}rpx`;
+    request('/dataCenter/complete-rate').then(res => {
+      const completeRateData = res.data.template.succ.data.list;
+      that.setData({ 
+        completeRateDataList: completeRateData,
+        completeRateKeysList: Object.keys(completeRateData[0])
+      });
 
-        // 更新.item元素的样式
-        that.setData({
-          itemHeight: itemHeight
-        });
-      }
-    });
+      // 计算每个.item元素的宽度
+      const itemHeight = `${(380) / completeRateData.length}rpx`;
+
+      // 更新.item元素的样式
+      that.setData({
+        itemHeight: itemHeight
+      });
+    })
     
     /**
      * 按区域统计
      */
-    wx.request({
-      url: 'https://example.com/ajax?dataType=area',
-      dataType: 'json',
-      success(res) {
-        const areaData = res.data.list;
-        that.setData({ 
-          areaDataList: areaData,
-          areaDataKeysList: Object.keys(areaData[0])
-        });
-      }
-    });
+
+    request("/dataCenter/area").then(res => {
+      const areaData = res.data.template.succ.data.list;
+      that.setData({
+        areaDataList: areaData,
+        areaDataKeysList: Object.keys(areaData[0])
+      })
+    }) 
 
   },
 
