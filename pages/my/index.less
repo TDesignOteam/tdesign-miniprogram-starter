@@ -1,8 +1,202 @@
-.log-list {
-  display: flex;
-  flex-direction: column;
-  padding: 40rpx;
+@import '/variable.less';
+
+page{
+  height: 100%;
 }
-.log-item {
-  margin: 10rpx;
+.container{
+
+  height: calc(100% - @tab-bar-height);
+  opacity: 1;
+  background: @bg-color;
+  padding: 0rpx 0rpx !important;
+  justify-content: start !important;
+  overflow: auto;
+}
+.nav-bar {
+  border-bottom: 1rpx solid #e7e7e7;
+}
+.info{
+  border-radius: 12px;
+  background: @bg-color-white;
+  margin: 0rpx 32rpx 0rpx 32rpx;
+}
+.person-info{
+  width: 686rpx;
+  opacity: 1;
+  margin-top: 32rpx;
+  margin-bottom: 42rpx;
+}
+.avatar {
+  border-radius: 999rpx;
+  opacity: 1;
+  margin:0rpx 32rpx 0rpx 32rpx !important;
+}
+.icon{
+  width: 128rpx !important;
+  height: 128rpx !important;
+  border-radius: 999rpx;
+  opacity: 1;
+  margin:32rpx 32rpx !important;
+  background: #D9E1FF;
+  color: #0052d9;
+}
+.icon .t-icon{
+  margin: 32rpx;
+  height: 64rpx;
+  padding-top: 6rpx;
+}
+.icon .t-icon-base{
+  margin: 32rpx !important;
+}
+.cell-group .t-cell{
+  height: 128rpx;
+  padding: 0rpx 0rpx !important;
+}
+.t-cell__left{
+  margin-right: 0rpx !important;
+}
+.my_cell_box .t-cell__title-text{
+  font-weight: 600 !important;
+}
+.t-cell__title-text{
+    color: #000000e6 !important;
+    font-size: 32rpx !important;
+    font-weight: 400;
+    font-family: "PingFang SC";
+    text-align: left;
+    line-height: 48rpx;
+   }
+.t-class-icon-edit{
+  margin: 44rpx 32rpx !important;
+}
+.my_cell .t-cell__right{
+  margin-left: 0rpx !important;
+}
+.t-icon-edit{
+  margin: 0rpx;
+  opacity: 1;
+  font-size: 40rpx;
+  color: #000000e6;
+}
+.person-name{
+  width: 390rpx;
+  height: 104rpx;
+  opacity: 1;
+  color: #000000e6;
+  font-size: 32rpx;
+  font-weight: 600;
+  font-family: "PingFang SC";
+}
+.name{
+  width: 390rpx;
+  height: 48rpx;
+}
+.person-tag{
+  display: flex;
+  margin-top: 8px;
+}
+.star{
+  border-radius: 3rpx;
+  opacity: 1;
+  background: #f3f3f3;
+  display: flex;
+  margin-right: 16rpx;
+}
+.city{
+  border-radius: 3rpx;
+  opacity: 1;
+  background: #f3f3f3;
+  display: flex;
+  margin-right: 16rpx;
+}
+.icon-star{
+  display: inline-block !important;
+  padding: 8rpx 4rpx 8rpx 12rpx;
+  font-size: 24rpx;
+}
+.name-star{
+    display: inline-block !important;
+    opacity: 1;
+    color: #000000e6;
+    font-size: 20rpx;
+    font-weight: 400;
+    font-family: "PingFang SC";
+    text-align: center;
+    line-height: 32rpx;
+    padding: 4rpx 12rpx 4rpx 0rpx;
+}
+.all{
+  border-right: 1px solid #e7e7e7;
+}
+.block-box {
+  display: block;
+  margin-bottom: 32rpx;
+  margin-top: 38rpx;
+}
+.grid-item__image {
+  --td-button-medium-icon-font-size: 48rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #f3f3f3;
+  border-radius: 12rpx;
+}
+.item .t-grid-item__content{
+  padding: 0px !important;
+}
+.service{
+  border-radius: 24rpx;
+  opacity: 1;
+  background: @bg-color-white;
+  margin: 32rpx 32rpx 0rpx 32rpx;
+}
+.service-item .t-grid-item__content{
+  padding-bottom: 16rpx !important;
+}
+.t-grid-item__text{
+  height: 40rpx !important;
+}
+.block{
+  margin-bottom: 4px;
+}
+.tip{
+  width: auto;
+  height: 44rpx;
+  margin-top: 32rpx;
+  opacity: 1;
+  color: #000000e6;
+  font-size: 28rpx;
+  font-weight: 600;
+  font-family: "PingFang SC";
+  text-align: left;
+  line-height: 44rpx;
+  padding-left: 40rpx;
+}
+.setting{
+  height: auto;
+  border-radius: 24rpx !important;
+  opacity: 1;
+  margin: 36rpx 32rpx 0rpx 32rpx;
+  background: @bg-color-white;
+}
+.set-group{
+  width:686rpx;
+  border-radius: 24rpx;
+  margin: 0rpx !important;
+}
+.set-group .t-cell__left{
+  margin-right: 24rpx !important;
+}
+.cell-note{
+    width: 470rpx;
+    height: 48rpx;
+    opacity: 1;
+    color: #000000e6;
+    font-size: 32rpx;
+    font-weight: 400;
+    font-family: "PingFang SC";
+    text-align: left;
+    line-height: 48rpx;
 }
