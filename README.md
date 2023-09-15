@@ -1,17 +1,25 @@
-# Miniprogram Starter
-基于 TDesign 小程序组件库的基础模板
+# TDesign 通用页面模板
 
-## 初始化
+基于 TDesign 打造的通用页面模板，包含通用的登陆注册、个人中心、设置中心、信息流等等功能。
 
-```
-npm install
-```
+## 通用能力
 
-然后打开微信开发者工具，点击菜单栏 ”工具“ - “构建npm”，即可开启预览。
+### 首页
 
-## 特性
+<img width="371" alt="image" src="https://github.com/TDesignOteam/tdesign-miniprogram-starter/assets/7017290/b0edf199-31cd-4182-ab1b-9e669acec2a3">
 
-- [x] 支持 LESS （v0.0.1）
-- [x] 使用自定义 tabbar (v0.0.1)
-- [x] 支持版本检测，并弹窗更新 (v0.0.2)
-- [ ] 通过 GitHub Action 自动发布小程序
+### 信息发布
+
+<img width="390" alt="image" src="https://github.com/TDesignOteam/tdesign-miniprogram-starter/assets/7017290/c780d8d3-c444-4bd7-85c2-e9c6b69678ec">
+
+### 个人中心
+
+<img width="395" alt="image" src="https://github.com/TDesignOteam/tdesign-miniprogram-starter/assets/7017290/d248f8df-6b2e-4a19-b20f-c28b60e1976f">
+
+### 设置中心
+
+<img width="388" alt="image" src="https://github.com/TDesignOteam/tdesign-miniprogram-starter/assets/7017290/36444396-0cc7-4dfa-9626-f6935c8a3f38">
+
+### 消息中心
+
+<img width="396" alt="image" src="https://github.com/TDesignOteam/tdesign-miniprogram-starter/assets/7017290/d49c8b27-1eae-47f5-ae94-012412ebd0d1">
