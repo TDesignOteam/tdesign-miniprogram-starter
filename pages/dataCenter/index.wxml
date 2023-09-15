@@ -1,0 +1,65 @@
+<view class="page">
+  <view class="first">
+    <view class="total-situation">整体情况</view>
+    <view class="accumulated-value">截止12:00累计数值</view>
+    <view class="total-situation-container">
+      <view wx:for="{{totalSituationDataList}}" wx:for-item="item" wx:key="index" class="big-item" style="width: {{memberitemWidth}};">
+        <view class="num-name">{{item.name}}</view>
+        <view class="big-num">{{item.number}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="second">
+    <view class="interaction-situation">互动情况</view>
+    <view class="interaction-situation-container">
+      <view wx:for="{{interactionSituationDataList}}" wx:for-item="item" wx:key="index" class="small-item" style="width: {{smallitemWidth}};">
+        <view class="num-name">{{item.name}}</view>
+        <view class="num-container">
+          <view class="small-num">{{item.number}}</view>
+          <view class="num-name" style="margin-left: 10rpx; align-self: flex-end;">次</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="third">
+    <view class="complete-rate">完播率</view>
+
+    <view class="progress">
+      <view class="hour-container">
+        <view class="per-hour" wx:for="{{completeRateDataList}}" wx:for-item="item" wx:key="index" style="height: {{itemHeight}};">{{item.time}}</view>
+      </view>
+      <view class="progress-container">
+        <view class="per-hour-rate" >
+          <t-progress wx:for="{{completeRateDataList}}" wx:for-item="item" wx:key="index" percentage="{{item.percentage}}" 
+          style="height: {{itemHeight}};"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="forth">
+    <view class="complete-rate">按区域统计</view>
+
+    <view class="scroll-container">
+      <view class="table">
+
+        <view class="white-row">
+          <view wx:for="{{areaDataKeysList}}" wx:for-index="index" wx:for-item="item" wx:key="k" class="table-cell">
+            <view class="table-cell">
+             <view class="small-title">{{item}}</view> 
+            </view>
+          </view>
+        </view>
+
+        <view wx:for="{{areaDataList}}" wx:for-index="index" wx:for-item="item" wx:key="index" class="{{index % 2 === 0 ? 'white-row' : 'gray-row'}}">
+        
+          <view wx:for="{{areaDataKeysList}}" wx:for-index="keyIndex" wx:for-item="keyItem" wx:key="{{keyIndex}}" class="table-cell">
+            <view class="area-num">{{item[keyItem]}}</view> 
+          </view>
+        </view>
+      
+
+      </view>
+    </view>
+  </view>
+</view>

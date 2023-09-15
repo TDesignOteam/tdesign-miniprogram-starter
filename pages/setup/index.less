@@ -1,0 +1,23 @@
+.page {
+  background-color: @background-color;
+  flex-direction: column;
+  justify-content: space-between;
+  display: block; 
+  box-sizing: border-box;
+  height: 100vh;
+  padding-top: @margin-bottom-size; 
+}
+
+@background-color: rgba(243, 243, 243, 1);
+@margin-left-size: 30rpx;
+@margin-right-size: 30rpx;
+@margin-bottom-size: 32rpx;
+@card-border-radius: 9px;
+
+.card {
+  margin-bottom: @margin-bottom-size;
+  border-radius: @card-border-radius;
+  width: auto;
+  margin-left: @margin-left-size;
+  margin-right: @margin-right-size;
+}
