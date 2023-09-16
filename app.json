@@ -1,12 +1,12 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/home/index",
     "pages/message/index",
     "pages/my/index",
     "pages/search/index",
     "pages/my/info-edit/index",
     "pages/chat/index",
-    "pages/login/login",
     "pages/loginCode/loginCode",
     "pages/dataCenter/index",
     "pages/setup/index",

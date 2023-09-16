@@ -42,6 +42,11 @@ Component({
       this.setData({
         visible: true
       })
+    },
+    onClickSearch(){
+      wx.navigateTo({
+        url: '/pages/search/index',
+      })
     }
   }
 })

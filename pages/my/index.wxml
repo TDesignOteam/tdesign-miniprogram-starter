@@ -48,13 +48,15 @@
   <t-grid-item wx:for="{{service}}"
     wx:key="item"
     text="{{item.name}}" image="{{item.image}}"
-    class="service-item" />
+    class="service-item" 
+    data-index="{{index}}"
+    bind:click="onClickService"/>
   </t-grid>
   </view>
   <view class="setting"> 
     <t-cell-group theme="card" class="set-group">
   <t-cell title="联系客服" leftIcon="service" t-class-note="cell-note"  hover arrow />
-  <t-cell title="设置" leftIcon="setting"  t-class-note="cell-note"  hover arrow />
+  <t-cell title="设置" leftIcon="setting"  t-class-note="cell-note" bind:click="OnClickSetting" hover arrow />
 </t-cell-group>
   </view>
 </view>

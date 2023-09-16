@@ -35,7 +35,32 @@ Page({
       url: '/pages/login/login',
     })
   },
+
+  // 点击设置按钮
+  OnClickSetting(){
+    wx.navigateTo({
+      url: '/pages/setup/index',
+    })
+  },
+
+  // 点击编辑按钮
   GotoEdit(){
     wx.navigateTo({ url: '/pages/my/info-edit/index' });
+  },
+
+  // 点击服务按钮
+  onClickService(e){
+    // console.log(e.target.dataset.index)
+    var index = e.target.dataset.index
+    if(index >= 4 && index <= 7){
+      this.navigateToDataCenter()
+    }
+  },
+
+  // 跳转数据中心
+  navigateToDataCenter(){
+    wx.navigateTo({
+      url: '/pages/dataCenter/index',
+    })
   },
 })
