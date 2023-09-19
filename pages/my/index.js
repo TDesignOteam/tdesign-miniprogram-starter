@@ -50,8 +50,7 @@ Page({
 
   // 点击服务按钮
   onClickService(e){
-    // console.log(e.target.dataset.index)
-    let index = e.target.dataset.index
+    const index = e.target.dataset.index
     if(index >= 4 && index <= 7){
       this.navigateToDataCenter()
     }
