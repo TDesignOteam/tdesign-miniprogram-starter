@@ -26,6 +26,8 @@ Page({
       cardInfo: cardRes.data,
       swiperList: swiperRes.data
     })
+
+
   },
   onLoad(option) {
     if (wx.getUserProfile) {
@@ -69,5 +71,6 @@ Page({
     wx.navigateTo({
       url: '/pages/release/index',
     });
-  },
+  }
+  
 })

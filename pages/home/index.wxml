@@ -1,5 +1,5 @@
 <view class="home">
-  <nav />
+  <nav nav-type="search" />
   <view class="home__content">
     <t-tabs defaultValue="recommend">
       <t-tab-panel label="推荐" value="recommend">

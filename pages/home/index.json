@@ -8,7 +8,7 @@
     "t-pull-down-refresh": "tdesign-miniprogram/pull-down-refresh/pull-down-refresh",
     "t-message": "tdesign-miniprogram/message/message",
     "t-button": "tdesign-miniprogram/button/button",
-    "nav": "./components/nav",
-    "card": "./components/card"
+    "nav": "/components/nav",
+    "card": "/components/card"
   }
 }

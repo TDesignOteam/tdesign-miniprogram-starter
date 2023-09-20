@@ -36,6 +36,6 @@ Page({
     })
   },
   GotoEdit(){
-    wx.navigateTo({ url: '/pages/my/info-edit/index' });
+    wx.navigateTo({ url: `/pages/my/info-edit/index` });
   },
 })
