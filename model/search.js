@@ -18,7 +18,7 @@ export function getSearchHistoryMock() {
       '版权素材',
       '星空',
       'illustration',
-      'AI绘画',
+      '原创',
     ],
   };
 }

@@ -24,6 +24,7 @@ Page({
 
     this.setData({
       cardInfo: cardRes.data,
+      focusCardInfo: cardRes.data.slice(0,3),
       swiperList: swiperRes.data
     })
 
@@ -35,8 +36,14 @@ Page({
         canIUseGetUserProfile: true,
       });
     }
-    if (option.release && option.release === 'success') {
-      this.showReleaseMsg();
+    if (option.oper) {
+      let content = '';
+      if (option.oper === 'release') {
+        content = '发布成功'
+      } else if (option.oper === 'save') {
+        content = '保存成功'
+      }
+      this.showOperMsg(content);
     }
   },
   onRefresh() {
@@ -59,12 +66,12 @@ Page({
       });
     }, 1500);
   },
-  showReleaseMsg() {
+  showOperMsg(content) {
     Message.success({
       context: this,
       offset: [20, 32],
       duration: 4000,
-      content: '发布成功',
+      content,
     });
   },
   goRelease() {
