@@ -1,7 +1,7 @@
 {
   "navigationBarTitleText": "数据中心",
   "usingComponents": {
-    "t-cell": "tdesign-miniprogram/cell/cell",
-    "t-progress": "tdesign-miniprogram/progress/progress"
+    "t-progress": "tdesign-miniprogram/progress/progress",
+    "t-empty": "tdesign-miniprogram/empty/empty"
   }
 }

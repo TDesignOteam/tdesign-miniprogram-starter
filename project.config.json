@@ -51,7 +51,18 @@
   "libVersion": "3.7.8",
   "appid": "wx6f3e38f61d138c04",
   "projectname": "miniprogram-starter",
-  "condition": {},
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "dataCenter",
+          "pathName": "pages/dataCenter/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  },
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
