@@ -55,6 +55,18 @@
     "miniprogram": {
       "list": [
         {
+          "name": "login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "loginCode",
+          "pathName": "pages/loginCode/loginCode",
+          "query": "",
+          "scene": null
+        },
+        {
           "name": "dataCenter",
           "pathName": "pages/dataCenter/index",
           "query": "",

@@ -1,17 +1,23 @@
-<!--pages/loginCode/loginCode.wxml-->
-<view class="welcome">请输入验证码</view>
-<text class="info">验证码已通过短信发送至 {{phoneNumber}}</text>
-<view class="verify-code">
-  <t-input placeholder="输入验证码" value="{{verifyCode}}" type="number" bindchange="onVerifycodeChange">
-    <view slot="suffix" style="display: flex; align-items: center">
-      <view class="suffix--line"></view>
-      <view class="verify" aria-role="button">
-        <!-- disabled属性绑定变量有问题所以自己写了disabled的类 -->
-        <t-link size="medium" class="{{sendCodeCount!==0?'disabled':''}}" theme="primary" content="{{sendCodeCount===0?'发送验证码':sendCodeCount+'秒后重发'}}" bindtap="sendCode" hover />
+<view class="page login-code">
+  <view class="login-code__title"> 请输入验证码 </view>
+  <view class="login-code__tips"> 验证码已通过短信发送至 {{ phoneNumber }} </view>
+  <view class="login-code__input">
+    <t-input placeholder="输入验证码" value="{{verifyCode}}" type="number" bindchange="onVerifycodeChange">
+      <view slot="suffix" class="suffix">
+        <view class="suffix--line"></view>
+        <t-link
+          size="medium"
+          hover
+          disabled="{{sendCodeCount !== 0}}"
+          theme="primary"
+          content="{{sendCodeCount === 0 ? '发送验证码' : sendCodeCount+'秒后重发' }}"
+          bindtap="sendCode"
+        />
       </view>
-    </view>
-  </t-input>
-</view>
-<view class="login-button">
-  <t-button theme="primary" size="large" block disabled="{{!verifyCode}}" bindtap="login">登录</t-button>
+    </t-input>
+  </view>
+
+  <view class="login-code__button">
+    <t-button theme="primary" size="large" block disabled="{{!verifyCode}}" bindtap="login">登录</t-button>
+  </view>
 </view>

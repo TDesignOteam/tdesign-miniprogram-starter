@@ -1,147 +1,91 @@
-/* pages/login/login.wxss */
-@import '/variable.less';
+.login {
+  &__title {
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 56rpx;
+    font-weight: 600;
+    line-height: 72rpx;
+    padding: 16rpx 32rpx 40rpx;
+  }
 
-.headline {
-  color: @gy1;
-  font-size: @headline-medium;
-  font-weight: 600;
-  line-height: 36px;
-  font-family: "PingFang SC";
-  opacity: 1;
-  text-align: left;
-}
-
-.body-large {
-  color: @gy1;
-  font-size: @body-large;
-  font-weight: 400;
-  font-family: "PingFang SC";
-  text-align: left;
-  line-height: 24px;
-}
-
-.welcome {
-  .headline();
-  width: 231px;
-  height: 36px;
-  margin: 8px auto 16px 20px;
-}
-
-.phone {
-  display: flex;
-  align-items: center;
-  height: 56px;
-  width: 100%;
-  margin-top: 8px;
-  margin-left: 16px;
-  border-bottom: 0.5px solid @gray3;
-
-  .area-code {
-    display: inline-block;
-    width: 65px;
-    height: 56px;
-    opacity: 1;
-
-    .code {
-      .body-large();
-      width: 65px;
-      height: 24px;
-      opacity: 1;
-      margin: 16px 0;
-      border-right: 0.5px solid @gray3;
-
-      .t-icon {
-        display: inline-block;
-      }
+  &__input {
+    .input-label {
+      display: flex;
+      padding-right: 32rpx;
+      box-sizing: border-box;
+      border-right: 1rpx solid #e7e7e7;
     }
 
-    .caret-down-small {
-      position: absolute;
+    .input-icon {
+      margin-left: 8rpx;
     }
   }
 
-  .phone-input {
-    display: inline-block;
-    margin-left: 1px;
-
-    .t-input {
-      background-color: transparent;
-
-      &--border::after {
-        height: 0;
-      }
-    }
-  }
-}
-
-.login-tip {
-  width: 204px;
-  height: 20px;
-  opacity: 1;
-  color: @gy3;
-  font-size: @body-small;
-  font-weight: 400;
-  font-family: "PingFang SC";
-  text-align: left;
-  line-height: 20px;
-  margin-left: 16px;
-  margin-top: 12px;
-}
-
-.user-agreement {
-  margin-top: 32px;
-  margin-left: 17px;
-  height: 20px;
-  width: 117px;
-  display: flex;
-
-  .agreement-check {
-    color: @brand7-normal;
-  }
-
-  .agreement-text {
-    color: @gy1;
-    font-size: @body-small;
+  &__tips {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 24rpx;
+    font-style: normal;
     font-weight: 400;
-    height: 100%;
-    margin-left: 5px;
-  }
-}
-
-.login-button {
-  margin: 16px;
-}
-
-.others {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 40px;
-  margin: 32px 16px auto 16px;
-  display: flex;
-  align-items: center;
-
-  &-text {
-    color: @gy2;
-    font-size: @body-small;
+    line-height: 40rpx;
+    margin: 24rpx 32rpx 32rpx;
   }
 
-  &-login {
-    margin: 8px;
+  &__button {
+    margin: 0 32rpx;
+  }
 
-    .t-button {
-      width: 111px;
+  &__password--forget {
+    display: flex;
+    font-size: 24rpx;
+    align-items: center;
+    margin: 32rpx;
+    line-height: 40rpx;
+  }
+
+  &__others {
+    margin: 64rpx 32rpx auto 32rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-label {
+      min-width: 96rpx;
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 24rpx;
+      line-height: 40rpx;
+    }
+
+    &-buttons {
+      flex: 1;
+      margin-left: 32rpx;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      .button {
+        margin: 0 !important;
+
+        &:not(:last-child) {
+          margin-right: 32rpx !important;
+        }
+      }
     }
   }
 
-  &-icon {
-    margin: 8px;
-  }
-}
+  // 覆盖组件样式
+  .radio-class {
+    --td-radio-icon-size: 32rpx;
+    --td-radio-label-line-height: 40rpx;
 
-.forget-password {
-  display: flex;
-  font-size: @body-small;
-  align-items: center;
-  margin-left: 16px;
+    align-items: center;
+  }
+
+  .radio-class-icon {
+    margin-top: 0 !important;
+  }
+
+  .radio-class-label {
+    margin-left: 8rpx !important;
+    font-size: 24rpx !important;
+    line-height: 40rpx !important;
+  }
 }
