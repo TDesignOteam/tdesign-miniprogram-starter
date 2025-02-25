@@ -2,7 +2,7 @@
   <t-navbar title="{{ navType === 'search' ? '' : titleText }}">
     <view slot="left">
       <view class="home-navbar__left">
-        <t-icon class="home-navbar__icon" bind:tap="openDrawer" name="view-list" size="24rpx" />
+        <t-icon class="home-navbar__icon" bind:tap="openDrawer" name="view-list" size="28rpx" />
         <t-search
           shape="round"
           placeholder="请搜索你想要的内容"
