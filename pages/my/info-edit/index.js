@@ -1,4 +1,4 @@
-import fetchPersonInfo from '../../../services/personInfo';
+import request from '../../../api/request';
 
 const areaList = {
   provinces: {
@@ -13,8 +13,8 @@ const areaList = {
     440400: '珠海市',
     440500: '汕头市',
     440600: '佛山市',
-  }
-}
+  },
+};
 
 const getOptions = (obj, filter) => {
   const res = Object.keys(obj).map((key) => ({ value: key, label: obj[key] }));
@@ -31,12 +31,12 @@ const match = (v1, v2, size) => v1.toString().slice(0, size) === v2.toString().s
 Page({
   data: {
     personInfo: {
-      userName: '',
+      name: '',
       gender: '0',
       birth: '',
       address: [],
       brief: '',
-      photos: []
+      photos: [],
     },
     mode: '',
     birthVisible: false,
@@ -55,17 +55,21 @@ Page({
 
   onLoad() {
     this.updateCities();
-    this.fetchData();
+    this.getPersonalInfo();
   },
 
-  fetchData() {
-    fetchPersonInfo().then((personInfo) => {
-      this.setData({
-        personInfo,
-      });
-      this.setData({
-        addressText: `${areaList.provinces[this.data.personInfo.address[0]]} ${areaList.cities[this.data.personInfo.address[1]]}`
-      });
+  getPersonalInfo() {
+    request('/api/genPersonalInfo').then((res) => {
+      this.setData(
+        {
+          personInfo: res.data.data,
+        },
+        () => {
+          this.setData({
+            addressText: `${areaList.provinces[this.data.personInfo.address[0]]} ${areaList.cities[this.data.personInfo.address[1]]}`,
+          });
+        },
+      );
     });
   },
 
@@ -80,7 +84,7 @@ Page({
     }
   },
 
-  // 更新第二栏的 city 列表 
+  // 更新第二栏的 city 列表
   updateCities() {
     const { provinces } = this.data;
     const cities = this.getCities(provinces[0].value);
@@ -97,7 +101,7 @@ Page({
       mode,
       [`${mode}Visible`]: true,
     });
-    if (mode === "address") {
+    if (mode === 'address') {
       const cities = this.getCities(this.data.personInfo.address[0]);
       this.setData({ cities });
     }
@@ -118,7 +122,7 @@ Page({
       [mode]: value,
       [`personInfo.${mode}`]: value,
     });
-    if (mode === "address") {
+    if (mode === 'address') {
       this.setData({
         addressText: label.join(' '),
       });
@@ -161,5 +165,5 @@ Page({
 
   saveInfo() {
     // console.log(this.data.personInfo)
-  }
-})
+  },
+});

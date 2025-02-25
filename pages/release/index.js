@@ -41,9 +41,26 @@ Page({
       originFiles,
     });
   },
+  gotoMap() {
+    wx.showToast({
+      title: '获取当前位置...',
+      icon: 'none',
+      image: '',
+      duration: 1500,
+      mask: false,
+      success: ()=>{},
+      fail: ()=>{},
+      complete: ()=>{}
+    });;
+  },
+  saveDraft() {
+    wx.reLaunch({
+      url: `/pages/home/index?oper=save`,
+    });
+  },
   release() {
     wx.reLaunch({
-      url: `/pages/home/index?release=success`,
+      url: `/pages/home/index?oper=release`,
     });
   },
 });

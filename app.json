@@ -1,16 +1,46 @@
 {
-  "pages": [
-    "pages/home/index",
-    "pages/message/index",
-    "pages/my/index",
-    "pages/search/index",
-    "pages/my/info-edit/index",
-    "pages/chat/index",
-    "pages/login/login",
-    "pages/loginCode/loginCode",
-    "pages/dataCenter/index",
-    "pages/setup/index",
-    "pages/release/index"
+  "pages": ["pages/home/index", "pages/message/index", "pages/my/index"],
+  "subpackages": [
+    {
+      "root": "pages/search",
+      "name": "search",
+      "pages": ["index"]
+    },
+    {
+      "root": "pages/my/info-edit",
+      "name": "edit",
+      "pages": ["index"]
+    },
+    {
+      "root": "pages/chat",
+      "name": "chat",
+      "pages": ["index"]
+    },
+    {
+      "root": "pages/login",
+      "name": "login",
+      "pages": ["login"]
+    },
+    {
+      "root": "pages/loginCode",
+      "name": "loginCode",
+      "pages": ["loginCode"]
+    },
+    {
+      "root": "pages/dataCenter",
+      "name": "dataCenter",
+      "pages": ["index"]
+    },
+    {
+      "root": "pages/setting",
+      "name": "setting",
+      "pages": ["index"]
+    },
+    {
+      "root": "pages/release",
+      "name": "release",
+      "pages": ["index"]
+    }
   ],
   "window": {
     "backgroundTextStyle": "light",

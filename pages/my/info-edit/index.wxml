@@ -1,4 +1,4 @@
-<view>
+<!-- <view>
   <t-input t-class="cell-title" label="用户名" bind:blur="saveUsername" value="{{personInfo.userName}}"
     placeholder="请输入用户名">
   </t-input>
@@ -41,4 +41,90 @@
   confirmBtn="确认" bindpick="onColumnChange" bindchange="onPickerChange" bindcancel="onPickerCancel">
   <t-picker-item options="{{provinces}}"></t-picker-item>
   <t-picker-item options="{{cities}}"></t-picker-item>
+</t-picker> -->
+
+
+<view class="info-edit">
+   <t-cell title="用户名" class="cell-class">
+     <t-input
+      slot="note"
+      borderless
+      t-class="input-class"
+      t-class-center="input-class-center"
+      placeholder="请输入用户名"
+      value="{{personInfo.name}}"
+      bind:blur="saveUsername"
+    />
+  </t-cell>
+  <t-cell title="性别" class="cell-class">
+    <t-radio-group
+      slot="note"
+      defaultValue="{{personInfo.gender}}"
+      borderless
+      t-class="radio-group-class"
+      bind:change="saveGender"
+    >
+      <t-radio t-class-label="radio-class-label" block="{{false}}" label="男" value="0" />
+      <t-radio t-class-label="radio-class-label" block="{{false}}" label="女" value="1" />
+      <t-radio t-class-label="radio-class-label" block="{{false}}" label="保密" value="2" />
+    </t-radio-group>
+  </t-cell>
+  <t-cell title="生日" data-mode="birth" note="{{personInfo.birth || ''}}" arrow bind:click="showPicker" />
+  <t-cell title="地址" data-mode="address" note="{{addressText || ''}}" arrow bind:click="showPicker" />
+  <t-cell title="个人简介" class="cell-class">
+    <t-textarea
+      slot="note"
+      t-class="textarea-class"
+      t-class-label="brief-label"
+      placeholder="请输入"
+      indicator
+      maxcharacter="50"
+      disableDefaultPadding="{{true}}"
+      value="{{personInfo.brief}}"
+      bind:blur="saveBrief"
+    />
+  </t-cell>
+  <t-cell title="照片墙" bordered="{{false}}" class="cell-class">
+    <t-upload
+      slot="note"
+      t-class="upload-class"
+      media-type="{{['video','image']}}"
+      files="{{personInfo.photos}}"
+      gridConfig="{{gridConfig}}"
+      bind:success="handleSuccess"
+      bind:remove="handleRemove"
+      bind:click="handleClick"
+    />
+  </t-cell>
+
+  <view class="btn_wrap">
+    <t-button theme="primary" size="medium" block bind:tap="saveInfo">保存</t-button>
+  </view>
+</view>
+
+<t-date-time-picker
+  mode="date"
+  title="选择生日"
+  visible="{{birthVisible}}"
+  cancelBtn="取消"
+  confirmBtn="确认"
+  defaultValue="{{personInfo.birth}}"
+  format="YYYY-MM-DD"
+  bindchange="onPickerChange"
+  bindcancel="hidePicker"
+/>
+
+<t-picker
+  mode="address"
+  title="选择地址"
+  visible="{{addressVisible}}"
+  value="{{personInfo.address}}"
+  cancelBtn="取消"
+  confirmBtn="确认"
+  bindpick="onColumnChange"
+  bindchange="onPickerChange"
+  bindcancel="onPickerCancel"
+>
+  <t-picker-item options="{{provinces}}" />
+  <t-picker-item options="{{cities}}" />
 </t-picker>
