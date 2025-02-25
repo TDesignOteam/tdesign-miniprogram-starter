@@ -1,8 +1,8 @@
 <view class="home-navbar">
-  <t-navbar title="{{ titleText }}">
+  <t-navbar title="{{ navType === 'search' ? '' : titleText }}">
     <view slot="left">
       <view class="home-navbar__left">
-        <t-button bind:touchend="openDrawer" icon="view-list" size="large" variant="text" shape="square" />
+        <t-icon class="home-navbar__icon" bind:tap="openDrawer" name="view-list" size="24rpx" />
         <t-search
           shape="round"
           placeholder="请搜索你想要的内容"

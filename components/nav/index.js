@@ -4,13 +4,10 @@ Component({
   },
   properties: {
     navType: {
-      type: 'string',
-      value: '',
+      type: String,
+      value: 'title',
     },
-    titleText: {
-      type: 'string',
-      value: '',
-    },
+    titleText: String,
   },
   data: {
     visible: false,

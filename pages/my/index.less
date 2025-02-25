@@ -2,7 +2,17 @@
   height: calc(100vh - 56px);
   overflow-y: auto;
 
-  --td-navbar-bg-color: #f5f6f7;
+  --td-navbar-bg-color: transparent;
+  .nav-bg {
+    width: 750rpx;
+    height: 200rpx;
+    position: fixed;
+    top: 0;
+  }
+
+  // &__content {
+  //   background: url('/images/bg_navbar.png') no-repeat center/100% auto;
+  // }
 
   &-info,
   &-service,
@@ -12,7 +22,7 @@
 
   &-info {
     border-radius: 24rpx;
-    margin: 0rpx 32rpx 0rpx 32rpx;
+    margin: 8rpx 32rpx 0rpx 32rpx;
     padding-bottom: 32rpx;
     overflow: hidden;
 
