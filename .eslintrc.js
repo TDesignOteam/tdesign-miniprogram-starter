@@ -27,13 +27,16 @@ module.exports = {
   plugins: ['prettier', 'import'],
   // extends: 'eslint:recommended',
   rules: {
-    'import/order': ['error', {
-      groups: [
-        'builtin', // Built-in types are first
-        'external', // Then the index file
-        'internal',
-      ]
-    }],
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'builtin', // Built-in types are first
+          'external', // Then the index file
+          'internal',
+        ],
+      },
+    ],
     // 非开发模式禁用debugger
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     // 允许调用首字母大写的函数时没有 new 操作符
@@ -80,5 +83,4 @@ module.exports = {
     'no-undef': 0,
     'no-proto': 0,
   },
-
-}
+};

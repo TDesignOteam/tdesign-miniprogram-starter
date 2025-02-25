@@ -1,11 +1,5 @@
-<view class="setting" >
-  <t-cell-group
-    wx:for="{{menuData}}"
-    wx:for-item="item"
-    wx:key="index"
-    t-class="cell-group-class"
-    theme="card"
-  >
+<view class="setting">
+  <t-cell-group wx:for="{{menuData}}" wx:for-item="item" wx:key="index" t-class="cell-group-class" theme="card">
     <t-cell
       wx:for="{{item}}"
       wx:for-item="carditem"

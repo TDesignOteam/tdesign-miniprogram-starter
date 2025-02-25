@@ -1,7 +1,6 @@
 import Message from 'tdesign-miniprogram/message/index';
 import request from '../../api/request';
 
-
 // 获取应用实例
 // const app = getApp()
 
@@ -20,15 +19,16 @@ Page({
   },
   // 生命周期
   async onReady() {
-    const [cardRes, swiperRes] = await Promise.all([request('/home/cards').then(res => res.data), request('/home/swipers').then(res => res.data)])
+    const [cardRes, swiperRes] = await Promise.all([
+      request('/home/cards').then((res) => res.data),
+      request('/home/swipers').then((res) => res.data),
+    ]);
 
     this.setData({
       cardInfo: cardRes.data,
-      focusCardInfo: cardRes.data.slice(0,3),
-      swiperList: swiperRes.data
-    })
-
-
+      focusCardInfo: cardRes.data.slice(0, 3),
+      swiperList: swiperRes.data,
+    });
   },
   onLoad(option) {
     if (wx.getUserProfile) {
@@ -39,30 +39,30 @@ Page({
     if (option.oper) {
       let content = '';
       if (option.oper === 'release') {
-        content = '发布成功'
+        content = '发布成功';
       } else if (option.oper === 'save') {
-        content = '保存成功'
+        content = '保存成功';
       }
       this.showOperMsg(content);
     }
   },
   onRefresh() {
-    this.refresh()
+    this.refresh();
   },
   async refresh() {
     this.setData({
-      enable: true
+      enable: true,
     });
     const [cardRes, swiperRes] = await Promise.all([
-      request('/home/cards').then(res => res.data),
-      request('/home/swipers').then(res => res.data)
-    ])
+      request('/home/cards').then((res) => res.data),
+      request('/home/swipers').then((res) => res.data),
+    ]);
 
     setTimeout(() => {
       this.setData({
         enable: false,
         cardInfo: cardRes.data,
-        swiperList: swiperRes.data
+        swiperList: swiperRes.data,
       });
     }, 1500);
   },
@@ -78,6 +78,5 @@ Page({
     wx.navigateTo({
       url: '/pages/release/index',
     });
-  }
-  
-})
+  },
+});

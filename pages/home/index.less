@@ -8,34 +8,32 @@ page {
   font-family: 'PingFang SC', 'Helvetica Neue', sans-serif;
 }
 
-
 .t-navbar {
-    --td-navbar-padding-top: @navbar-padding-top;
-    --td-navbar-height: calc(@nav-bar-height - @navbar-padding-top) !important;
-
-    &__left {
-      margin: 0;
-    }
-  }
+  --td-navbar-padding-top: @navbar-padding-top;
+  --td-navbar-height: calc(@nav-bar-height - @navbar-padding-top) !important;
 
   &__left {
-    display: flex;
-    align-items: center;
-    padding: 0 16rpx;
+    margin: 0;
+  }
+}
 
-    .t-search {
-      --td-search-height: 64rpx;
-      --td-search-font-size: @font-size-mini;
-      width: 375rpx;
+&__left {
+  display: flex;
+  align-items: center;
+  padding: 0 16rpx;
 
-      .t-icon {
-        font-size: @font-size-default  !important;
-      }
+  .t-search {
+    --td-search-height: 64rpx;
+    --td-search-font-size: @font-size-mini;
+    width: 375rpx;
+
+    .t-icon {
+      font-size: @font-size-default !important;
     }
   }
+}
 
 .home {
-
   background-color: @bg-color;
   height: calc(100% - @tab-bar-height);
   overflow: auto;

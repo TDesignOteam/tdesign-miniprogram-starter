@@ -6,12 +6,8 @@
     </view>
     <view class="card-content">
       <view class="card-content__item" wx:for="{{totalSituationDataList}}" wx:for-item="item" wx:key="index">
-        <view class="card-content__item--desc ">
-          {{item.name}}
-        </view>
-        <view class="card-content__item--count">
-          {{item.number}}
-        </view>
+        <view class="card-content__item--desc"> {{item.name}} </view>
+        <view class="card-content__item--count"> {{item.number}} </view>
       </view>
     </view>
   </view>
@@ -21,10 +17,8 @@
       <view class="card-header__title"> 互动情况 </view>
     </view>
     <view class="card-content">
-      <view class="card-content__item"wx:for="{{interactionSituationDataList}}" wx:for-item="item" wx:key="*this">
-        <view class="card-content__item--desc ">
-          {{item.name}}
-        </view>
+      <view class="card-content__item" wx:for="{{interactionSituationDataList}}" wx:for-item="item" wx:key="*this">
+        <view class="card-content__item--desc"> {{item.name}} </view>
         <view class="card-content__item--count">
           <text>{{item.number}}</text>
           <text class="unit">次</text>
@@ -38,7 +32,7 @@
       <view class="card-header__title"> 完播率 </view>
     </view>
     <view class="card-content">
-      <view class="card-content__item" wx:for="{{completeRateDataList}}" wx:for-item="item" wx:key="index" >
+      <view class="card-content__item" wx:for="{{completeRateDataList}}" wx:for-item="item" wx:key="index">
         <text class="progress__label"> {{item.time}} </text>
         <view class="progress__content">
           <t-progress percentage="{{item.percentage}}" />

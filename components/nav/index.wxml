@@ -3,11 +3,11 @@
     <view slot="left">
       <view class="home-navbar__left">
         <t-button bind:touchend="openDrawer" icon="view-list" size="large" variant="text" shape="square" />
-        <t-search 
-        shape="round" 
-        placeholder="请搜索你想要的内容"
-        bindtap="searchTurn"
-        wx:if="{{navType === 'search'}}"
+        <t-search
+          shape="round"
+          placeholder="请搜索你想要的内容"
+          bindtap="searchTurn"
+          wx:if="{{navType === 'search'}}"
         />
       </view>
     </view>
