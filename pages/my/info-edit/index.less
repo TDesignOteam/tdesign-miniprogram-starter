@@ -1,30 +1,40 @@
-.box {
-    display: flex;
-    justify-content: space-between;
-    background-color: #fff;
-    width: 500rpx;
+.input-class {
+  --td-input-vertical-padding: 0;
+}
+
+.cell-class {
+  .t-cell__title {
+    flex: none !important;
+    width: 81px !important;
+  }
+}
+
+.textarea-class {
+  width: 100% !important;
+  padding: 0 !important;
+  height: 200rpx;
+}
+
+.upload-class {
+  width: 100%;
+}
+
+.radio-group-class {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.radio-class-label {
+  padding-left: 16rpx !important;
 }
 
 .btn_wrap {
-    padding-bottom: calc(env(safe-area-inset-bottom) + 20rpx);
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-}
-
-.save__btn {
-    width: 90% !important;
-}
-
-.brief-label {
-    font-size: 55rpx;
-    --td-font-size-base: 32rpx;
-}
-
-.external-class {
-    height: 280rpx;
-}
-
-.cell-title {
-    --td-spacer-2: 92rpx;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  padding: 32rpx;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 32rpx);
+  box-sizing: border-box;
 }

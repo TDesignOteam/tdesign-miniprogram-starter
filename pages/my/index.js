@@ -1,41 +1,51 @@
-const ServiceMockData = require('../../mock/service.js')
-const LoginMockData = require('../../mock/personinfo.js')
+import request from '../../api/request';
 
 Page({
   data: {
-    logs: [],
-    image: '',
-    isLoad:false,
-    name:'',
-    star:'',
-    city:'',
-    service:[],
-    settingdata:[
-      {name:'联系客服',icon:'service',type:'service'},
-      {name:'设置',icon:'setting',type:'setting'},
-    ]
+    isLoad: false,
+    service: [],
+    personalInfo: {},
+    settingdata: [
+      { name: '联系客服', icon: 'service', type: 'service' },
+      { name: '设置', icon: 'setting', type: 'setting' },
+    ],
   },
+
   onLoad() {
-    this.setData({service:ServiceMockData['api/service'].data.service})
+    this.getServiceList();
   },
-  onShow(){
+
+  async onShow() {
     const Token = wx.getStorageSync('access_token');
-    const {image,name,star,city} = LoginMockData['api/login'].data
-    if(Token)
+    const personalInfo = await this.getPersonalInfo();
+
+    if (Token) {
       this.setData({
-        isLoad:true,
-        image:image,
-        name:name,
-        star:star,
-        city:city,
-       })
+        isLoad: true,
+        personalInfo,
+      });
+    }
   },
-  Login(e){
+
+  getServiceList() {
+    request('/api/getServiceList').then((res) => {
+      const { service } = res.data.data;
+      this.setData({ service });
+    });
+  },
+
+  async getPersonalInfo() {
+    const info = await request('/api/genPersonalInfo').then((res) => res.data.data);
+    return info;
+  },
+
+  onLogin(e) {
     wx.navigateTo({
       url: '/pages/login/login',
-    })
+    });
   },
-  GotoEdit(){
+
+  onNavigateTo() {
     wx.navigateTo({ url: `/pages/my/info-edit/index` });
   },
-})
+});

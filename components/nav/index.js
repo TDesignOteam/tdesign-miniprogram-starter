@@ -1,102 +1,105 @@
 Component({
   options: {
-    styleIsolation: 'shared'
+    styleIsolation: 'shared',
   },
   properties: {
     navType: {
-      type: "string",
-      value: ""
+      type: 'string',
+      value: '',
     },
     titleText: {
-      type: "string",
-      value: ""
-    }
+      type: 'string',
+      value: '',
+    },
   },
   data: {
     visible: false,
-    sidebar: [{
+    sidebar: [
+      {
         title: '首页',
-        url: "pages/home/index",
-        isSidebar: true
-      }, {
+        url: 'pages/home/index',
+        isSidebar: true,
+      },
+      {
         title: '搜索页',
-        url: "pages/search/index",
-        isSidebar: false
-      }, {
+        url: 'pages/search/index',
+        isSidebar: false,
+      },
+      {
         title: '发布页',
-        url: "pages/release/index",
-        isSidebar: false
+        url: 'pages/release/index',
+        isSidebar: false,
       },
       {
         title: '消息列表页',
-        url: "pages/message/index",
-        isSidebar: true
+        url: 'pages/message/index',
+        isSidebar: true,
       },
       {
         title: '对话页',
-        url: "pages/chat/index",
-        isSidebar: false
+        url: 'pages/chat/index',
+        isSidebar: false,
       },
       {
         title: '个人中心页',
-        url: "pages/my/index",
-        isSidebar: true
+        url: 'pages/my/index',
+        isSidebar: true,
       },
       {
         title: '个人信息表单页',
-        url: "pages/my/info-edit/index",
-        isSidebar: false
+        url: 'pages/my/info-edit/index',
+        isSidebar: false,
       },
       {
         title: '设置页',
-        url: "pages/setup/index",
-        isSidebar: false
+        url: 'pages/setting/index',
+        isSidebar: false,
       },
       {
         title: '数据图表页',
-        url: "pages/dataCenter/index",
-        isSidebar: false
+        url: 'pages/dataCenter/index',
+        isSidebar: false,
       },
       {
         title: '登录注册页',
-        url: "pages/login/login",
-        isSidebar: false
+        url: 'pages/login/login',
+        isSidebar: false,
       },
-    ]
+    ],
   },
   methods: {
     openDrawer() {
       this.setData({
-        visible: true
-      })
+        visible: true,
+      });
     },
     itemClick(e) {
       const that = this;
-      const { isSidebar , url } = e.detail.item;
-      if(isSidebar){
+      const { isSidebar, url } = e.detail.item;
+      if (isSidebar) {
         wx.switchTab({
           url: `/${url}`,
         }).then(() => {
           // 防止点回tab时，sidebar依旧是展开模式
           that.setData({
-            visible: false
-          })
-        })
+            visible: false,
+          });
+        });
       } else {
         wx.navigateTo({
           url: `/${url}`,
         }).then(() => {
           that.setData({
-            visible: false
-          })
-        })
+            visible: false,
+          });
+        });
       }
     },
 
     searchTurn() {
       wx.navigateTo({
         url: `/pages/search/index`,
-      })
-    }
-  }
-})
+      });
+    },
+  },
+});
