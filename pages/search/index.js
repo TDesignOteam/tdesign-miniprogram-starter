@@ -1,7 +1,4 @@
-import {
-  getSearchHistory,
-  getSearchPopular,
-} from '../../services/fetchSearchHistory';
+import { getSearchHistory, getSearchPopular } from '../../services/fetchSearchHistory';
 
 Page({
   data: {
@@ -61,18 +58,18 @@ Page({
       console.error(error);
     }
   },
-  
+
   setHistoryWords(searchValue) {
     if (!searchValue) return;
-    
+
     const { historyWords } = this.data;
     const index = historyWords.indexOf(searchValue);
-    
+
     if (index !== -1) {
       historyWords.splice(index, 1);
     }
     historyWords.unshift(searchValue);
-    
+
     this.setData({
       searchValue,
       historyWords,
@@ -82,7 +79,7 @@ Page({
     //         url: `/pages/goods/result/index?searchValue=${searchValue}`,
     //     });
     // }
-   },
+  },
 
   /**
    * 清空历史记录的再次确认框
@@ -151,15 +148,15 @@ Page({
     const { historyWords } = this.data;
     const { index } = e.currentTarget.dataset;
     const searchValue = historyWords[index || 0] || '';
-    
+
     this.setHistoryWords(searchValue);
   },
-  
+
   handlePopularTap(e) {
     const { popularWords } = this.data;
     const { index } = e.currentTarget.dataset;
     const searchValue = popularWords[index || 0] || '';
-    
+
     this.setHistoryWords(searchValue);
   },
 
@@ -171,7 +168,7 @@ Page({
   handleSubmit(e) {
     const { value } = e.detail;
     if (value.length === 0) return;
-   
+
     this.setHistoryWords(value);
   },
 

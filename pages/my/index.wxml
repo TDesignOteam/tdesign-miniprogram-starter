@@ -3,7 +3,7 @@
   <view class="my-info">
     <t-cell-group>
       <t-cell wx:if="{{isLoad}}" bordered="{{false}}">
-        <t-avatar image="{{personalInfo.image}}" slot="left-icon" size="large"/>
+        <t-avatar image="{{personalInfo.image}}" slot="left-icon" size="large" />
         <view class="my-info__person" slot="note">
           <view class="name">{{personalInfo.name}}</view>
           <view class="tags">
@@ -27,9 +27,9 @@
     </t-cell-group>
     <t-divider t-class="divider-class" />
     <t-grid t-class="grid-class">
-      <t-grid-item text="全部发布" icon="root-list" class="split-line grid-item"/>
-      <t-grid-item text="审核中" icon="search" class="grid-item"/>
-      <t-grid-item text="已发布" icon="upload" class="grid-item"/>
+      <t-grid-item text="全部发布" icon="root-list" class="split-line grid-item" />
+      <t-grid-item text="审核中" icon="search" class="grid-item" />
+      <t-grid-item text="已发布" icon="upload" class="grid-item" />
       <t-grid-item text="草稿箱" icon="file-copy" class="grid-item" />
     </t-grid>
   </view>
@@ -50,7 +50,6 @@
 
   <t-cell-group theme="card">
     <t-cell title="联系客服" leftIcon="service" hover arrow />
-    <t-cell title="设置" leftIcon="setting" url="/pages/setting/index"  hover arrow />
+    <t-cell title="设置" leftIcon="setting" url="/pages/setting/index" hover arrow />
   </t-cell-group>
-
 </view>

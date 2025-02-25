@@ -1,9 +1,13 @@
-<!--pages/message/message.wxml-->
-<!-- <t-navbar class="nav-bar" title="全部消息">
-  <t-icon slot="left" name="view-list" size="48rpx" />
-</t-navbar> -->
-<nav nav-type="title" title-text="全部消息" ></nav>
-<scroll-view class="message-list" scroll-y refresher-enabled refresher-triggered="{{ loading }}" bindrefresherrefresh="getMessageList">
+<wxs src="./index.wxs" module="utils" />
+
+<nav nav-type="title" title-text="全部消息"></nav>
+<scroll-view
+  class="message-list"
+  scroll-y
+  refresher-enabled
+  refresher-triggered="{{ loading }}"
+  bindrefresherrefresh="getMessageList"
+>
   <t-cell
     wx:for="{{ messageList }}"
     wx:key="index"
@@ -19,27 +23,3 @@
     <t-badge slot="right-icon" count="{{ utils.computeUnreadNum(item.messages) }}" class="wrapper" />
   </t-cell>
 </scroll-view>
-
-<wxs module="utils">
-  /** 计算某个用户的未读消息数量 */
-  function computeUnreadNum(messages) {
-    var cnt = 0
-    for (var i = 0; i < messages.length; i++)
-      if (!messages[i].read)
-        cnt++
-    return cnt
-  }
-
-  /** 某个用户的消息是否全部已读 */
-  function isRead(messages) {
-    for (var i = 0; i < messages.length; i++)
-      if (!messages[i].read)
-        return false
-    return true
-  }
-
-  module.exports = {
-    computeUnreadNum: computeUnreadNum,
-    isRead: isRead
-  }
-</wxs>

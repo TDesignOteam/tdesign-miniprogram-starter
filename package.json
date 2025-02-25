@@ -4,7 +4,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "npx eslint ./ --no-eslintrc -c ./.eslintrc.js"
+    "lint": "npx eslint ./ --no-eslintrc -c ./.eslintrc.js",
+    "lint:fix": "npm run lint:fix-eslint && npm run lint:fix-prettier",
+    "lint:fix-eslint": "eslint --ext .js,.ts ./ --max-warnings 0 --ignore-path .gitignore --ignore-path .eslintignore --fix",
+    "lint:fix-prettier": "prettier ./ --ignore-path .gitignore --ignore-path .eslintignore --ignore-path .prettierignore --write './**/*.{js,ts}' --ignore-unknown"
   },
   "keywords": [
     "wechat",

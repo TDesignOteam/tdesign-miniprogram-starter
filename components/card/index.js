@@ -2,12 +2,8 @@ Component({
   properties: {
     url: String,
     desc: String,
-    tags: Array
+    tags: Array,
   },
-  data: {
-
-  },
-  methods: {
-
-  }
-})
+  data: {},
+  methods: {},
+});

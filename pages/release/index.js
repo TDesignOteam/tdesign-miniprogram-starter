@@ -48,10 +48,10 @@ Page({
       image: '',
       duration: 1500,
       mask: false,
-      success: ()=>{},
-      fail: ()=>{},
-      complete: ()=>{}
-    });;
+      success: () => {},
+      fail: () => {},
+      complete: () => {},
+    });
   },
   saveDraft() {
     wx.reLaunch({

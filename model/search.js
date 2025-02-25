@@ -12,14 +12,7 @@
  */
 export function getSearchHistoryMock() {
   return {
-    historyWords: [
-      'AI绘画',
-      'Stable Diffusion',
-      '版权素材',
-      '星空',
-      'illustration',
-      '原创',
-    ],
+    historyWords: ['AI绘画', 'Stable Diffusion', '版权素材', '星空', 'illustration', '原创'],
   };
 }
 

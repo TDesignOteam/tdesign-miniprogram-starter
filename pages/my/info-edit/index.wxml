@@ -43,10 +43,9 @@
   <t-picker-item options="{{cities}}"></t-picker-item>
 </t-picker> -->
 
-
 <view class="info-edit">
-   <t-cell title="用户名" class="cell-class">
-     <t-input
+  <t-cell title="用户名" class="cell-class">
+    <t-input
       slot="note"
       borderless
       t-class="input-class"
