@@ -43,6 +43,7 @@
   <t-picker-item options="{{cities}}"></t-picker-item>
 </t-picker> -->
 
+<t-navbar title="个人信息" left-arrow />
 <view class="info-edit">
   <t-cell title="用户名" class="cell-class">
     <t-input

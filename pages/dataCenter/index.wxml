@@ -1,3 +1,4 @@
+<t-navbar title="数据中心" left-arrow />
 <view class="data-center">
   <view class="card first">
     <view class="card-header">

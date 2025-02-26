@@ -4,13 +4,10 @@ Component({
   },
   properties: {
     navType: {
-      type: 'string',
-      value: '',
+      type: String,
+      value: 'title',
     },
-    titleText: {
-      type: 'string',
-      value: '',
-    },
+    titleText: String,
   },
   data: {
     visible: false,
@@ -66,6 +63,13 @@ Component({
         isSidebar: false,
       },
     ],
+    statusHeight: 0,
+  },
+  lifetimes: {
+    ready() {
+      const statusHeight = wx.getWindowInfo().statusBarHeight;
+      this.setData({ statusHeight });
+    },
   },
   methods: {
     openDrawer() {

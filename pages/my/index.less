@@ -2,7 +2,13 @@
   height: calc(100vh - 56px);
   overflow-y: auto;
 
-  --td-navbar-bg-color: #f5f6f7;
+  --td-navbar-bg-color: transparent;
+  .nav-bg {
+    width: 750rpx;
+    height: 200rpx;
+    position: fixed;
+    top: 0;
+  }
 
   &-info,
   &-service,
@@ -12,7 +18,7 @@
 
   &-info {
     border-radius: 24rpx;
-    margin: 0rpx 32rpx 0rpx 32rpx;
+    margin: 8rpx 32rpx 0rpx 32rpx;
     padding-bottom: 32rpx;
     overflow: hidden;
 
@@ -39,24 +45,27 @@
     }
 
     .split-line {
-      border-right: 2rpx solid #e7e7e7;
+      border-right: 1px solid #e7e7e7;
     }
 
-    &__person {
-      width: 390rpx;
-      height: 104rpx;
-      opacity: 1;
-      color: #000000e6;
-      font-size: 32rpx;
-      font-weight: 600;
+    // 头像margin-right
+    --td-spacer-1: 32rpx;
 
+    &__person {
       .name {
         line-height: 48rpx;
+        font-size: 32rpx;
+        color: #000000e6;
+        font-weight: 600;
       }
 
       .tags {
         display: flex;
-        margin-top: 16px;
+        margin-top: 16rpx;
+
+        --td-text-color-primary: #000000e6;
+        --td-tag-medium-font-size: 20rpx;
+        --td-tag-medium-icon-size: 24rpx;
       }
 
       .tag:not(:last-child) {

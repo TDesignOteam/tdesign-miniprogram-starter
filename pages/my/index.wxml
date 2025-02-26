@@ -1,22 +1,22 @@
 <view class="my">
-  <nav nav-type="title" title-text="我的" />
+  <image class="nav-bg" src="/images/bg_navbar.png" />
+  <nav title-text="我的" />
   <view class="my-info">
     <t-cell-group>
       <t-cell wx:if="{{isLoad}}" bordered="{{false}}">
         <t-avatar image="{{personalInfo.image}}" slot="left-icon" size="large" />
-        <view class="my-info__person" slot="note">
+        <view class="my-info__person" slot="description">
           <view class="name">{{personalInfo.name}}</view>
           <view class="tags">
             <t-tag class="tag" variant="light" icon="discount">{{personalInfo.star}}</t-tag>
             <t-tag class="tag" variant="light" icon="location">{{personalInfo.city}}</t-tag>
           </view>
         </view>
-        <t-icon slot="right-icon" name="edit" size="40rpx" bindtap="onNavigateTo" />
+        <t-icon slot="right-icon" name="edit" size="40rpx" color="#000000e6" bindtap="onNavigateTo" />
       </t-cell>
       <t-cell
         wx:if="{{!isLoad}}"
         title="请先登录/注册"
-        align="middle"
         bordered="{{false}}"
         t-class-title="cell-class-title"
         t-class-center="cell-class-center"
@@ -35,7 +35,7 @@
   </view>
 
   <view class="my-service">
-    <view class="my-service--tips"> 推荐服务 </view>
+    <view class="my-service--tips">推荐服务</view>
     <t-grid column="{{4}}" class="my-service__list">
       <t-grid-item
         class="my-service__list-item"

@@ -107,3 +107,5 @@ dist
 miniprogram_npm
 
 .idea
+
+project.private.config.json

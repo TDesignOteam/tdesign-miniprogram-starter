@@ -1,3 +1,4 @@
+<t-navbar left-arrow />
 <view class="page login-code">
   <view class="login-code__title"> 请输入验证码 </view>
   <view class="login-code__tips"> 验证码已通过短信发送至 {{ phoneNumber }} </view>

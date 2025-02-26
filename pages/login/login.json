@@ -1,6 +1,7 @@
 {
-  "navigationBarTitleText": "",
+  "navigationStyle": "custom",
   "usingComponents": {
+    "t-navbar": "tdesign-miniprogram/navbar/navbar",
     "t-input": "tdesign-miniprogram/input/input",
     "t-icon": "tdesign-miniprogram/icon/icon",
     "t-link": "tdesign-miniprogram/link/link",

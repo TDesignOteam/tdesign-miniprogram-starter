@@ -1,8 +1,8 @@
 <view class="home-navbar">
-  <t-navbar title="{{ titleText }}">
+  <t-navbar title="{{ navType === 'search' ? '' : titleText }}">
     <view slot="left">
       <view class="home-navbar__left">
-        <t-button bind:touchend="openDrawer" icon="view-list" size="large" variant="text" shape="square" />
+        <t-icon class="home-navbar__icon" bind:tap="openDrawer" name="view-list" size="48rpx" />
         <t-search
           shape="round"
           placeholder="请搜索你想要的内容"
@@ -12,5 +12,12 @@
       </view>
     </view>
   </t-navbar>
-  <t-drawer visible="{{visible}}" items="{{sidebar}}" placement="left" title="页面目录" bind:item-click="itemClick" />
+  <t-drawer
+    style="padding-top: {{statusHeight}}px;"
+    visible="{{visible}}"
+    items="{{sidebar}}"
+    placement="left"
+    title="页面目录"
+    bind:item-click="itemClick"
+  />
 </view>
