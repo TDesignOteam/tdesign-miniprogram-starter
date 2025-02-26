@@ -10,10 +10,6 @@
     top: 0;
   }
 
-  // &__content {
-  //   background: url('/images/bg_navbar.png') no-repeat center/100% auto;
-  // }
-
   &-info,
   &-service,
   &-setting {
@@ -52,21 +48,24 @@
       border-right: 1px solid #e7e7e7;
     }
 
-    &__person {
-      width: 390rpx;
-      height: 104rpx;
-      opacity: 1;
-      color: #000000e6;
-      font-size: 32rpx;
-      font-weight: 600;
+    // 头像margin-right
+    --td-spacer-1: 32rpx;
 
+    &__person {
       .name {
         line-height: 48rpx;
+        font-size: 32rpx;
+        color: #000000e6;
+        font-weight: 600;
       }
 
       .tags {
         display: flex;
-        margin-top: 16px;
+        margin-top: 8px;
+
+        --td-text-color-primary: #000000e6;
+        --td-tag-medium-font-size: 20rpx;
+        --td-tag-medium-icon-size: 24rpx;
       }
 
       .tag:not(:last-child) {
