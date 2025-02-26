@@ -1,6 +1,7 @@
 {
-  "navigationBarTitleText": "数据中心",
+  "navigationStyle": "custom",
   "usingComponents": {
+    "t-navbar": "tdesign-miniprogram/navbar/navbar",
     "t-progress": "tdesign-miniprogram/progress/progress",
     "t-empty": "tdesign-miniprogram/empty/empty"
   }

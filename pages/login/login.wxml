@@ -1,3 +1,4 @@
+<t-navbar left-arrow />
 <view class="page login">
   <view class="login__title"> 欢迎登录 TDsign </view>
   <view class="login__content">

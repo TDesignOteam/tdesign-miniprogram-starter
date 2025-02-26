@@ -1,3 +1,4 @@
+<t-navbar title="搜索" left-arrow />
 <view class="search-page">
   <view class="search-input">
     <t-search

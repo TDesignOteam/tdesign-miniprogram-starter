@@ -1,3 +1,4 @@
+<t-navbar title="设置" left-arrow />
 <view class="setting">
   <t-cell-group wx:for="{{menuData}}" wx:for-item="item" wx:key="index" t-class="cell-group-class" theme="card">
     <t-cell

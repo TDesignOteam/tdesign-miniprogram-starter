@@ -63,12 +63,12 @@ Component({
         isSidebar: false,
       },
     ],
-    drawerTitleMarginTop: 0,
+    statusHeight: 0,
   },
   lifetimes: {
     ready() {
-      const menuButton = wx.getMenuButtonBoundingClientRect();
-      this.setData({ drawerTitleMarginTop: menuButton.top });
+      const statusHeight = wx.getWindowInfo().statusBarHeight;
+      this.setData({ statusHeight });
     },
   },
   methods: {

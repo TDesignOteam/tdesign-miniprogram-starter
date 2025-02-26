@@ -1,4 +1,4 @@
-<!-- pages/release/index.wxml -->
+<t-navbar title="发布动态" left-arrow />
 <view class="release-container">
   <view class="upload box">
     <t-upload

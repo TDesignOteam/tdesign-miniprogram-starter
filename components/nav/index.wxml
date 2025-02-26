@@ -13,7 +13,7 @@
     </view>
   </t-navbar>
   <t-drawer
-    style="--drawer-title-margin-top: {{drawerTitleMarginTop}}px;"
+    style="padding-top: {{statusHeight}}px;"
     visible="{{visible}}"
     items="{{sidebar}}"
     placement="left"
