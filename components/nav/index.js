@@ -63,6 +63,13 @@ Component({
         isSidebar: false,
       },
     ],
+    drawerTitleMarginTop: 0,
+  },
+  lifetimes: {
+    ready() {
+      const menuButton = wx.getMenuButtonBoundingClientRect();
+      this.setData({ drawerTitleMarginTop: menuButton.top });
+    },
   },
   methods: {
     openDrawer() {

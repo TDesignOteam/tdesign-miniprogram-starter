@@ -12,5 +12,12 @@
       </view>
     </view>
   </t-navbar>
-  <t-drawer visible="{{visible}}" items="{{sidebar}}" placement="left" title="页面目录" bind:item-click="itemClick" />
+  <t-drawer
+    style="--drawer-title-margin-top: {{drawerTitleMarginTop}}px;"
+    visible="{{visible}}"
+    items="{{sidebar}}"
+    placement="left"
+    title="页面目录"
+    bind:item-click="itemClick"
+  />
 </view>
