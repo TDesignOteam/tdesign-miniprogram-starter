@@ -1,12 +1,20 @@
-.input-class {
+.info-edit {
   --td-input-vertical-padding: 0;
 }
 
-.cell-class {
+.info-edit__cell {
   .t-cell__title {
-    flex: none !important;
-    width: 81px !important;
+    flex: none;
+    width: 160rpx;
   }
+}
+
+.info-edit__gender {
+  --td-radio-vertical-padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--td-bg-color-container, #fff);
 }
 
 .textarea-class {
@@ -17,17 +25,6 @@
 
 .upload-class {
   width: 100%;
-}
-
-.radio-group-class {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  background-color: #fff;
-}
-
-.radio-class-label {
-  padding-left: 16rpx !important;
 }
 
 .btn_wrap {

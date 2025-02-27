@@ -8,10 +8,10 @@ export default {
       name: '小小轩',
       star: '天枰座',
       city: '深圳',
-      gender: '男',
-      birth: '1994-9-27',
+      gender: 0,
+      birth: '1994-09-27',
       address: ['440000', '440300'],
-      brief: '这是一条个人简介',
+      brief: '在你身边，为你设计',
       photos: [
         {
           url: 'https://tdesign.gtimg.com/mobile/demos/example4.png',

@@ -1,4 +1,4 @@
-import request from '../../../api/request';
+import request from '~/api/request';
 
 const areaList = {
   provinces: {
@@ -32,15 +32,31 @@ Page({
   data: {
     personInfo: {
       name: '',
-      gender: '0',
+      gender: 0,
       birth: '',
       address: [],
       brief: '',
       photos: [],
     },
-    mode: '',
+    genderOptions: [
+      {
+        label: '男',
+        value: 0,
+      },
+      {
+        label: '女',
+        value: 1,
+      },
+      {
+        label: '保密',
+        value: 2,
+      },
+    ],
     birthVisible: false,
-
+    birthStart: '1970-01-01',
+    birthEnd: '2025-03-01',
+    birthTime: 0,
+    birthFilter: (type, options) => (type === 'year' ? options.sort((a, b) => b.value - a.value) : options),
     addressText: '',
     addressVisible: false,
     provinces: getOptions(areaList.provinces),
@@ -66,7 +82,9 @@ Page({
         },
         () => {
           this.setData({
-            addressText: `${areaList.provinces[this.data.personInfo.address[0]]} ${areaList.cities[this.data.personInfo.address[1]]}`,
+            addressText: `${areaList.provinces[this.data.personInfo.address[0]]} ${
+              areaList.cities[this.data.personInfo.address[1]]
+            }`,
           });
         },
       );
@@ -98,7 +116,6 @@ Page({
   showPicker(e) {
     const { mode } = e.currentTarget.dataset;
     this.setData({
-      mode,
       [`${mode}Visible`]: true,
     });
     if (mode === 'address') {
@@ -107,8 +124,8 @@ Page({
     }
   },
 
-  hidePicker() {
-    const { mode } = this.data;
+  hidePicker(e) {
+    const { mode } = e.currentTarget.dataset;
     this.setData({
       [`${mode}Visible`]: false,
     });
@@ -116,10 +133,11 @@ Page({
 
   onPickerChange(e) {
     const { value, label } = e.detail;
-    const { mode } = this.data;
+    const { mode } = e.currentTarget.dataset;
+
+    console.log('onPickerChange', mode, label, value);
 
     this.setData({
-      [mode]: value,
       [`personInfo.${mode}`]: value,
     });
     if (mode === 'address') {
@@ -127,21 +145,20 @@ Page({
         addressText: label.join(' '),
       });
     }
-
-    this.hidePicker();
   },
 
-  saveUsername(e) {
+  onNameChange(e) {
     const { value } = e.detail;
     this.setData({
-      [`personInfo.userName`]: value,
+      'personInfo.name': value,
     });
   },
 
-  saveGender(e) {
+  onGenderChange(e) {
     const { value } = e.detail;
+    console.log('onGenderChange', value);
     this.setData({
-      [`personInfo.gender`]: value,
+      'personInfo.gender': value,
     });
   },
 
@@ -164,6 +181,6 @@ Page({
   },
 
   saveInfo() {
-    // console.log(this.data.personInfo)
+    console.log(this.data.personInfo);
   },
 });
