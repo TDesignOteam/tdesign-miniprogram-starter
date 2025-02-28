@@ -114,7 +114,7 @@ Page({
     const { value, label } = e.detail;
     const { mode } = e.currentTarget.dataset;
 
-    console.log('onPickerChange', mode, label, value);
+    // console.log('onPickerChange', mode, label, value);
 
     this.setData({
       [`personInfo.${mode}`]: value,
@@ -174,6 +174,6 @@ Page({
   },
 
   onSaveInfo() {
-    console.log(this.data.personInfo);
+    // console.log(this.data.personInfo);
   },
 });

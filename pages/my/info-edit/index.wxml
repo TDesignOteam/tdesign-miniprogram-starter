@@ -30,10 +30,10 @@
   </t-cell>
   <t-cell bordered="{{false}}" class="info-edit__cell" title="相片墙">
     <t-upload
-      draggable
+      bind:drop="onPhotosDrop"
       bind:remove="onPhotosRemove"
       bind:success="onPhotosSuccess"
-      bind:drop="onPhotosDrop"
+      draggable
       files="{{personInfo.photos}}"
       gridConfig="{{gridConfig}}"
       media-type="{{ ['image'] }}"
