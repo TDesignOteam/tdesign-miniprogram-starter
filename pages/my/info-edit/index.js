@@ -114,8 +114,6 @@ Page({
     const { value, label } = e.detail;
     const { mode } = e.currentTarget.dataset;
 
-    // console.log('onPickerChange', mode, label, value);
-
     this.setData({
       [`personInfo.${mode}`]: value,
     });
@@ -126,27 +124,23 @@ Page({
     }
   },
 
-  onNameChange(e) {
+  personInfoFieldChange(field, e) {
     const { value } = e.detail;
     this.setData({
-      'personInfo.name': value,
+      [`personInfo.${field}`]: value,
     });
+  },
+
+  onNameChange(e) {
+    this.personInfoFieldChange('name', e);
   },
 
   onGenderChange(e) {
-    const { value } = e.detail;
-
-    this.setData({
-      'personInfo.gender': value,
-    });
+    this.personInfoFieldChange('gender', e);
   },
 
-  onIntroductionSave(e) {
-    const { value } = e.detail;
-
-    this.setData({
-      'personInfo.introduction': value,
-    });
+  onIntroductionChange(e) {
+    this.personInfoFieldChange('introduction', e);
   },
 
   onPhotosRemove(e) {

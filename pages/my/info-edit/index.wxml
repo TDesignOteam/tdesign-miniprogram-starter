@@ -18,7 +18,7 @@
   <t-cell arrow bind:click="showPicker" data-mode="address" note="{{addressText || ''}}" title="地址" />
   <t-cell class="info-edit__cell" title="个人简介">
     <t-textarea
-      bind:blur="onIntroductionSave"
+      bind:blur="onIntroductionChange"
       disableDefaultPadding="{{true}}"
       indicator
       maxcharacter="50"
