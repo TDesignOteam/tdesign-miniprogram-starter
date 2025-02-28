@@ -1,25 +1,26 @@
+import { getLocalUrl } from '~/utils/util.js';
+
 export default {
   path: '/api/genPersonalInfo',
   data: {
     code: 200,
     message: 'success',
     data: {
-      image: '/images/avatar1.png',
+      image: '/static/avatar1.png',
       name: '小小轩',
       star: '天枰座',
-      city: '深圳',
-      gender: '男',
-      birth: '1994-9-27',
+      gender: 0,
+      birth: '1994-09-27',
       address: ['440000', '440300'],
-      brief: '这是一条个人简介',
+      brief: '在你身边，为你设计',
       photos: [
         {
-          url: 'https://tdesign.gtimg.com/mobile/demos/example4.png',
+          url: getLocalUrl('/static/img_td.png', 'uploaded1.png'),
           name: 'uploaded1.png',
           type: 'image',
         },
         {
-          url: 'https://tdesign.gtimg.com/mobile/demos/example6.png',
+          url: getLocalUrl('/static/img_td.png', 'uploaded2.png'),
           name: 'uploaded2.png',
           type: 'image',
         },

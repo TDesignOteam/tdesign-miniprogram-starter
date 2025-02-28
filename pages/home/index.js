@@ -1,5 +1,5 @@
 import Message from 'tdesign-miniprogram/message/index';
-import request from '../../api/request';
+import request from '~/api/request';
 
 // 获取应用实例
 // const app = getApp()

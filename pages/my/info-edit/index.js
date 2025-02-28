@@ -1,49 +1,38 @@
-import request from '../../../api/request';
-
-const areaList = {
-  provinces: {
-    110000: '北京市',
-    440000: '广东省',
-  },
-  cities: {
-    110100: '北京市',
-    440100: '广州市',
-    440200: '韶关市',
-    440300: '深圳市',
-    440400: '珠海市',
-    440500: '汕头市',
-    440600: '佛山市',
-  },
-};
-
-const getOptions = (obj, filter) => {
-  const res = Object.keys(obj).map((key) => ({ value: key, label: obj[key] }));
-
-  if (filter) {
-    return res.filter(filter);
-  }
-
-  return res;
-};
-
-const match = (v1, v2, size) => v1.toString().slice(0, size) === v2.toString().slice(0, size);
+import request from '~/api/request';
+import { areaList } from './areaData.js';
 
 Page({
   data: {
     personInfo: {
       name: '',
-      gender: '0',
+      gender: 0,
       birth: '',
       address: [],
-      brief: '',
+      introduction: '',
       photos: [],
     },
-    mode: '',
+    genderOptions: [
+      {
+        label: '男',
+        value: 0,
+      },
+      {
+        label: '女',
+        value: 1,
+      },
+      {
+        label: '保密',
+        value: 2,
+      },
+    ],
     birthVisible: false,
-
+    birthStart: '1970-01-01',
+    birthEnd: '2025-03-01',
+    birthTime: 0,
+    birthFilter: (type, options) => (type === 'year' ? options.sort((a, b) => b.value - a.value) : options),
     addressText: '',
     addressVisible: false,
-    provinces: getOptions(areaList.provinces),
+    provinces: [],
     cities: [],
 
     gridConfig: {
@@ -54,7 +43,7 @@ Page({
   },
 
   onLoad() {
-    this.updateCities();
+    this.initAreaData();
     this.getPersonalInfo();
   },
 
@@ -65,40 +54,47 @@ Page({
           personInfo: res.data.data,
         },
         () => {
+          const { personInfo } = this.data;
           this.setData({
-            addressText: `${areaList.provinces[this.data.personInfo.address[0]]} ${areaList.cities[this.data.personInfo.address[1]]}`,
+            addressText: `${areaList.provinces[personInfo.address[0]]} ${areaList.cities[personInfo.address[1]]}`,
           });
         },
       );
     });
   },
 
-  onColumnChange(e) {
-    const { column, index } = e.detail;
-    const { provinces, cities } = this.data;
+  getAreaOptions(data, filter) {
+    const res = Object.keys(data).map((key) => ({ value: key, label: data[key] }));
+    return typeof filter === 'function' ? res.filter(filter) : res;
+  },
 
+  getCities(provinceValue) {
+    return this.getAreaOptions(
+      areaList.cities,
+      (city) => `${city.value}`.slice(0, 2) === `${provinceValue}`.slice(0, 2),
+    );
+  },
+
+  initAreaData() {
+    const provinces = this.getAreaOptions(areaList.provinces);
+    const cities = this.getCities(provinces[0].value);
+    this.setData({ provinces, cities });
+  },
+
+  onAreaPick(e) {
+    const { column, index } = e.detail;
+    const { provinces } = this.data;
+
+    // 更改省份则更新城市列表
     if (column === 0) {
-      // 更改省份
       const cities = this.getCities(provinces[index].value);
       this.setData({ cities });
     }
   },
 
-  // 更新第二栏的 city 列表
-  updateCities() {
-    const { provinces } = this.data;
-    const cities = this.getCities(provinces[0].value);
-    this.setData({ cities });
-  },
-
-  getCities(provinceValue) {
-    return getOptions(areaList.cities, (city) => match(city.value, provinceValue, 2));
-  },
-
   showPicker(e) {
     const { mode } = e.currentTarget.dataset;
     this.setData({
-      mode,
       [`${mode}Visible`]: true,
     });
     if (mode === 'address') {
@@ -107,8 +103,8 @@ Page({
     }
   },
 
-  hidePicker() {
-    const { mode } = this.data;
+  hidePicker(e) {
+    const { mode } = e.currentTarget.dataset;
     this.setData({
       [`${mode}Visible`]: false,
     });
@@ -116,10 +112,9 @@ Page({
 
   onPickerChange(e) {
     const { value, label } = e.detail;
-    const { mode } = this.data;
+    const { mode } = e.currentTarget.dataset;
 
     this.setData({
-      [mode]: value,
       [`personInfo.${mode}`]: value,
     });
     if (mode === 'address') {
@@ -127,43 +122,52 @@ Page({
         addressText: label.join(' '),
       });
     }
-
-    this.hidePicker();
   },
 
-  saveUsername(e) {
+  personInfoFieldChange(field, e) {
     const { value } = e.detail;
     this.setData({
-      [`personInfo.userName`]: value,
+      [`personInfo.${field}`]: value,
     });
   },
 
-  saveGender(e) {
-    const { value } = e.detail;
-    this.setData({
-      [`personInfo.gender`]: value,
-    });
+  onNameChange(e) {
+    this.personInfoFieldChange('name', e);
   },
 
-  saveBrief(e) {
-    const { value } = e.detail;
-
-    this.setData({
-      [`personInfo.brief`]: value,
-    });
+  onGenderChange(e) {
+    this.personInfoFieldChange('gender', e);
   },
 
-  handleRemove(e) {
+  onIntroductionChange(e) {
+    this.personInfoFieldChange('introduction', e);
+  },
+
+  onPhotosRemove(e) {
     const { index } = e.detail;
     const { photos } = this.data.personInfo;
 
     photos.splice(index, 1);
     this.setData({
-      [`personInfo.photos`]: photos,
+      'personInfo.photos': photos,
     });
   },
 
-  saveInfo() {
-    // console.log(this.data.personInfo)
+  onPhotosSuccess(e) {
+    const { files } = e.detail;
+    this.setData({
+      'personInfo.photos': files,
+    });
+  },
+
+  onPhotosDrop(e) {
+    const { files } = e.detail;
+    this.setData({
+      'personInfo.photos': files,
+    });
+  },
+
+  onSaveInfo() {
+    // console.log(this.data.personInfo);
   },
 });

@@ -1,4 +1,4 @@
-import { getSearchHistory, getSearchPopular } from '../../services/fetchSearchHistory';
+import { getSearchHistory, getSearchPopular } from '~/services/fetchSearchHistory';
 
 Page({
   data: {
