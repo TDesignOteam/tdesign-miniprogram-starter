@@ -7,33 +7,33 @@
 ### 首页
 
 <div style="display: flex">
-  <img width="375" alt="image" src="https://oteam-tdesign-1258344706.cos-internal.ap-guangzhou.tencentcos.cn/miniprogram/template/home-1.png">
-  <img width="375" alt="image" src="https://oteam-tdesign-1258344706.cos-internal.ap-guangzhou.tencentcos.cn/miniprogram/template/home-2.png">
+  <img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/home-1.png">
+  <img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/home-2.png">
 </div>
 
 ### 信息发布
 
-<img width="375" alt="image" src="https://oteam-tdesign-1258344706.cos-internal.ap-guangzhou.tencentcos.cn/miniprogram/template/publish-1.png">
+<img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/publish-1.png">
 
 ### 搜索页
 
-<img width="375" alt="image" src="https://oteam-tdesign-1258344706.cos-internal.ap-guangzhou.tencentcos.cn/miniprogram/template/search-1.png">
+<img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/search-1.png">
 
 ### 个人中心
 <div style="display: flex">
-	<img width="375" alt="image" src="https://oteam-tdesign-1258344706.cos-internal.ap-guangzhou.tencentcos.cn/miniprogram/template/user-1.png">
-	<img width="375" alt="image" src="https://oteam-tdesign-1258344706.cos-internal.ap-guangzhou.tencentcos.cn/miniprogram/template/user-2.png">
-	<img width="375" alt="image" src="https://oteam-tdesign-1258344706.cos-internal.ap-guangzhou.tencentcos.cn/miniprogram/template/user-3.png">
+  <img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/user-1.png">
+  <img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/user-2.png">
+  <img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/user-3.png">
 </div>
 
 
 ### 设置中心
 
-<img width="375" alt="image" src="https://oteam-tdesign-1258344706.cos-internal.ap-guangzhou.tencentcos.cn/miniprogram/template/setting-1.png">
+<img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/setting-1.png">
 
 ### 消息中心
 
-<img width="375" alt="image" src="https://oteam-tdesign-1258344706.cos-internal.ap-guangzhou.tencentcos.cn/miniprogram/template/message-1.png">
+<img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/message-1.png">
 
 
 ## 开发预览
