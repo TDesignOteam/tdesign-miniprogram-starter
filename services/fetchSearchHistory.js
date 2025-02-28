@@ -1,6 +1,6 @@
-import { config } from '../config/index';
+import { config } from '~/config/index';
 import delay from './delay';
-import { getSearchHistoryMock, getSearchPopularMock } from '../model/search';
+import { getSearchHistoryMock, getSearchPopularMock } from '~/model/search';
 
 /** 获取搜索历史 */
 function mockSearchHistory() {

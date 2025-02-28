@@ -1,3 +1,11 @@
+// 复制到本地临时路径，方便预览
+const getLocalUrl = (path, name) => {
+  const fs = wx.getFileSystemManager();
+  const tempFileName = `${wx.env.USER_DATA_PATH}/${name}`;
+  fs.copyFileSync(path, tempFileName);
+  return tempFileName;
+};
+
 export default {
   path: '/api/genPersonalInfo',
   data: {
@@ -7,19 +15,18 @@ export default {
       image: '/images/avatar1.png',
       name: '小小轩',
       star: '天枰座',
-      city: '深圳',
       gender: 0,
       birth: '1994-09-27',
       address: ['440000', '440300'],
       brief: '在你身边，为你设计',
       photos: [
         {
-          url: 'https://tdesign.gtimg.com/mobile/demos/example4.png',
+          url: getLocalUrl('/images/img_td.png', 'uploaded1.png'),
           name: 'uploaded1.png',
           type: 'image',
         },
         {
-          url: 'https://tdesign.gtimg.com/mobile/demos/example6.png',
+          url: getLocalUrl('/images/img_td.png', 'uploaded2.png'),
           name: 'uploaded2.png',
           type: 'image',
         },
