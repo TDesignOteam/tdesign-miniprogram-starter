@@ -1,5 +1,5 @@
 import request from '~/api/request';
-import useToastBehavior from '../../behaviors/useToast';
+import useToastBehavior from '~/behaviors/useToast';
 
 Page({
   behaviors: [useToastBehavior],

@@ -1,4 +1,4 @@
-import useToastBehavior from '../../behaviors/useToast';
+import useToastBehavior from '~/behaviors/useToast';
 
 Page({
   behaviors: [useToastBehavior],
