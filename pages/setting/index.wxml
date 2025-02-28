@@ -12,6 +12,10 @@
       url="{{carditem.url}}"
       bordered="true"
       leftIcon="{{carditem.icon}}"
+      data-data="{{carditem}}"
+      bindclick="onEleClick"
     />
   </t-cell-group>
 </view>
+
+<t-toast id="t-toast" />

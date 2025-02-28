@@ -1,4 +1,7 @@
+import useToastBehavior from '~/behaviors/useToast';
+
 Page({
+  behaviors: [useToastBehavior],
   data: {
     menuData: [
       [
@@ -43,5 +46,11 @@ Page({
         },
       ],
     ],
+  },
+
+  onEleClick(e) {
+    const { title, url } = e.currentTarget.dataset.data;
+    if (url) return;
+    this.onShowToast('#t-toast', title);
   },
 });
