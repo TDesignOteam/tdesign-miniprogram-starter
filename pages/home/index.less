@@ -2,45 +2,11 @@
 
 @home-tab-item-height: 96rpx;
 
-page {
-  height: 100vh;
-  box-sizing: border-box;
-  font-family: 'PingFang SC', 'Helvetica Neue', sans-serif;
-}
+.home-container {
+  height: calc(100vh - @tab-bar-height);
 
-.t-navbar {
-  --td-navbar-padding-top: @navbar-padding-top;
-  --td-navbar-height: calc(@nav-bar-height - @navbar-padding-top) !important;
-
-  &__left {
-    margin: 0;
-  }
-}
-
-&__left {
-  display: flex;
-  align-items: center;
-  padding: 0 16rpx;
-
-  .t-search {
-    --td-search-height: 64rpx;
-    --td-search-font-size: @font-size-mini;
-    width: 375rpx;
-
-    .t-icon {
-      font-size: @font-size-default !important;
-    }
-  }
-}
-
-.home {
-  background-color: @bg-color;
-  height: calc(100% - @tab-bar-height);
-  overflow: auto;
-
-  &__content {
+  .home-content {
     height: calc(100% - @nav-bar-height);
-    overflow: hidden;
   }
 
   .t-tabs {
@@ -56,7 +22,7 @@ page {
     }
   }
 
-  &__card-list {
+  .home-card-list {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -66,16 +32,9 @@ page {
   }
 }
 
-.usermotto {
-  margin-top: 200px;
-}
 
 .home-release {
   position: fixed;
   bottom: 208rpx;
   right: 32rpx;
-
-  .relese-button {
-    width: 200rpx;
-  }
 }
