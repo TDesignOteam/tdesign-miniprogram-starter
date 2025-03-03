@@ -1,19 +1,20 @@
 /* pages/release/index.wxss */
-@import url('../../app.less');
-@zero: 0;
-@multi: 2;
-@pad32: 32rpx;
 .release-container {
-  .container;
-  padding: @zero;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  box-sizing: border-box;
+  
   .box {
     width: 100%;
   }
   .upload {
-    height: 112rpx * @multi;
+    height: 112rpx * 2;
     position: relative;
     &-class {
-      width: 344rpx * @multi;
+      width: 344rpx * 2;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -21,21 +22,21 @@
     }
   }
   .desc {
-    height: 132rpx * @multi;
+    height: 132rpx * 2;
     display: flex;
-    padding: @pad32;
+    padding: 32rpx;
     align-items: flex-start;
     justify-content: space-between;
     box-sizing: border-box;
     .desc-class {
-      width: 246rpx * @multi;
+      width: 246rpx * 2;
       height: 100%;
-      padding: @zero;
+      padding: 0;
     }
   }
   .taggroup {
     .cell-title-class {
-      width: 81rpx * @multi;
+      width: 81rpx * 2;
     }
     .cell-note-class {
       overflow-x: auto;
@@ -48,12 +49,12 @@
   .btngroup {
     display: flex;
     justify-content: space-evenly;
-    padding: @pad32;
+    padding: 32rpx;
     position: fixed;
     bottom: 64rpx;
     .btn-class {
-      width: 163.5rpx * @multi;
-      margin: @zero;
+      width: 163.5rpx * 2;
+      margin: 0;
     }
   }
 }
