@@ -1,5 +1,5 @@
 // pages/message/message.js
-import { fetchMessageList, markMessagesRead } from '~/services/chat';
+import { fetchMessageList, markMessagesRead } from '~/mock/chat';
 
 const app = getApp();
 const { socket } = app.globalData; // 获取已连接的 socketTask

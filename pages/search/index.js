@@ -1,4 +1,4 @@
-import { getSearchHistory, getSearchPopular } from '~/services/fetchSearchHistory';
+import request from '~/api/request';
 
 Page({
   data: {
@@ -26,18 +26,16 @@ Page({
    * @returns {Promise<void>}
    */
   async queryHistory() {
-    try {
-      const data = await getSearchHistory();
-      const code = 'Success';
-      if (String(code).toUpperCase() === 'SUCCESS') {
+    request('/api/searchHistory').then((res) => {
+      const {code, data} = res;
+
+      if (code === 200) {
         const { historyWords = [] } = data;
         this.setData({
           historyWords,
         });
       }
-    } catch (error) {
-      console.error(error);
-    }
+    });
   },
 
   /**
@@ -45,18 +43,16 @@ Page({
    * @returns {Promise<void>}
    */
   async queryPopular() {
-    try {
-      const data = await getSearchPopular();
-      const code = 'Success';
-      if (String(code).toUpperCase() === 'SUCCESS') {
+    request('/api/searchPopular').then((res) => {
+      const {code, data} = res;
+
+      if (code === 200) {
         const { popularWords = [] } = data;
         this.setData({
           popularWords,
         });
       }
-    } catch (error) {
-      console.error(error);
-    }
+    });
   },
 
   setHistoryWords(searchValue) {
