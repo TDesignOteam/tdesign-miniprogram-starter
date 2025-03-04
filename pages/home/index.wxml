@@ -15,7 +15,13 @@
               height="488rpx"
               style="width: 340rpx"
             />
-            <card wx:for="{{cardInfo}}" wx:key="index" desc="{{item.desc}}" url="{{item.url}}" tags="{{item.tags}}" />
+            <card
+              wx:for="{{cardInfo}}"
+              wx:key="index"
+              desc="{{item.desc}}"
+              url="{{item.url}}"
+              tags="{{item.tags}}"
+            />
           </view>
         </t-pull-down-refresh>
       </t-tab-panel>
@@ -35,8 +41,8 @@
 </view>
 
 <view class="home-release">
-    <t-button theme="primary" size="large" icon="add" shape="round" bindtap="goRelease">
+  <t-button theme="primary" size="large" icon="add" shape="round" bindtap="goRelease">
     发布
-    </t-button>
+  </t-button>
 </view>
 <t-message id="t-message" />

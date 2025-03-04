@@ -27,7 +27,7 @@ Page({
    */
   async queryHistory() {
     request('/api/searchHistory').then((res) => {
-      const {code, data} = res;
+      const { code, data } = res;
 
       if (code === 200) {
         const { historyWords = [] } = data;
@@ -44,7 +44,7 @@ Page({
    */
   async queryPopular() {
     request('/api/searchPopular').then((res) => {
-      const {code, data} = res;
+      const { code, data } = res;
 
       if (code === 200) {
         const { popularWords = [] } = data;
