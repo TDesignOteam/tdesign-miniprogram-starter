@@ -1165,8 +1165,8 @@
               return typeof patternLetters[flag] === 'function'
                 ? patternLetters[flag](date)
                 : patternLetters[flag] in patternLetters
-                  ? creatNewSubString($0, patternLetters[flag])
-                  : date[patternLetters[flag]]();
+                ? creatNewSubString($0, patternLetters[flag])
+                : date[patternLetters[flag]]();
             });
           },
           // 生成一个随机的 Date 对象。
@@ -1967,8 +1967,8 @@
           return min === undefined
             ? Basic.natural(defaultMin, defaultMax) // ()
             : max === undefined
-              ? min // ( len )
-              : Basic.natural(parseInt(min, 10), parseInt(max, 10)); // ( min, max )
+            ? min // ( len )
+            : Basic.natural(parseInt(min, 10), parseInt(max, 10)); // ( min, max )
         }
 
         module.exports = {
@@ -6566,8 +6566,8 @@
               id.slice(2, 6) === '0000'
                 ? undefined
                 : id.slice(4, 6) == '00'
-                  ? id.slice(0, 2) + '0000'
-                  : id.slice(0, 4) + '00';
+                ? id.slice(0, 2) + '0000'
+                : id.slice(0, 4) + '00';
             fixed.push({
               id: id,
               pid: pid,
@@ -6848,8 +6848,8 @@
                       '\n' === e
                         ? (l.seenCR || l.line++, (l.column = 1), (l.seenCR = !1))
                         : '\r' === e || '\u2028' === e || '\u2029' === e
-                          ? (l.line++, (l.column = 1), (l.seenCR = !0))
-                          : (l.column++, (l.seenCR = !1));
+                        ? (l.line++, (l.column = 1), (l.seenCR = !0))
+                        : (l.column++, (l.seenCR = !1));
                 }
                 return (
                   Mt !== l &&
@@ -9020,8 +9020,7 @@
             // loadstart The fetch initiates.
             this.dispatchEvent(new Event('loadstart' /*, false, false, this*/));
 
-            if (this.custom.async)
-              setTimeout(done, this.custom.timeout); // 异步
+            if (this.custom.async) setTimeout(done, this.custom.timeout); // 异步
             else done(); // 同步
 
             function done() {

@@ -69,7 +69,7 @@ Page({
   showOperMsg(content) {
     Message.success({
       context: this,
-      offset: [20, 32],
+      offset: [120, 32],
       duration: 4000,
       content,
     });

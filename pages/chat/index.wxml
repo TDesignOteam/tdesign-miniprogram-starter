@@ -1,15 +1,17 @@
 <wxs src="./index.wxs" module="utils" />
 
 <t-navbar class="nav-bar" title="{{ name }}" left-arrow />
-<scroll-view class="content" scroll-y scroll-into-view="{{ anchor }}">
-  <view class="messages">
-    <block wx:for="{{ messages }}" wx:key="index">
-      <view wx:if="{{ index === 0 || item.time - messages[index - 1].time > 120000 }}" class="time"
-        >{{ utils.formatTime(item.time) }}</view
-      >
 
-      <view wx:if="{{ item.from === 0 }}" class="message-area">
-        <view class="message self">
+<view class="chat-container">
+  <scroll-view class="content" scroll-y scroll-into-view="{{ anchor }}">
+    <view class="messages">
+      <block wx:for="{{ messages }}" wx:key="index">
+        <view wx:if="{{ index === 0 || item.time - messages[index - 1].time > 120000 }}" class="time" >
+          {{ utils.formatTime(item.time) }}
+        </view>
+
+        <view wx:if="{{ item.from === 0 }}" class="message-area">
+          <view class="message self">
           <text space="nbsp">{{ item.content }}</text>
           <t-loading
             wx:if="{{ item.messageId === null }}"
@@ -18,20 +20,21 @@
             size="32rpx"
             class="wrapper"
           />
+          </view>
+          <t-avatar image="{{ myAvatar }}" size="small" />
         </view>
-        <t-avatar image="{{ myAvatar }}" size="small" />
-      </view>
 
-      <view wx:else class="message-area">
-        <t-avatar image="{{ avatar }}" size="small" />
-        <view class="message other">
+        <view wx:else class="message-area">
+          <t-avatar image="{{ avatar }}" size="small" />
+          <view class="message other">
           <text space="nbsp">{{ item.content }}</text>
+          </view>
         </view>
-      </view>
-    </block>
-    <view id="bottom" />
-  </view>
-</scroll-view>
+      </block>
+      <view id="bottom" />
+    </view>
+  </scroll-view>
+</view>
 
 <view class="block" style="margin-bottom: {{ keyboardHeight }}px" />
 <view class="bottom" style="margin-bottom: {{ keyboardHeight }}px">
